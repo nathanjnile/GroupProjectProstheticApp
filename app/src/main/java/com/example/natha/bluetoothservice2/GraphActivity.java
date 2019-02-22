@@ -179,7 +179,7 @@ public class GraphActivity extends AppCompatActivity {
         set.setFillColor(ColorTemplate.getHoloBlue());
         set.setHighLightColor(Color.rgb(244,117,177));
         set.setValueTextColor(Color.WHITE);
-        set.setValueTextSize(10f);
+        set.setValueTextSize(4f);
 
         return set;
 
