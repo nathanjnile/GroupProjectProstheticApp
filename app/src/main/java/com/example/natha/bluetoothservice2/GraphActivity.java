@@ -72,7 +72,7 @@ public class GraphActivity extends AppCompatActivity {
             }
             catch (NumberFormatException e)
             {
-                foo = 0;
+                //foo = 0;
             }
 
             addEntry();

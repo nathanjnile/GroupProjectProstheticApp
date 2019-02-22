@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
        // LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
 
         serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
-
         startService(serviceIntent); // starts the service
     }
 
