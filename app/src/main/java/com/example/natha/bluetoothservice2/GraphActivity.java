@@ -135,7 +135,7 @@ public class GraphActivity extends AppCompatActivity {
 
         YAxis y1 = mChart.getAxisLeft();
         y1.setTextColor(Color.WHITE);
-        y1.setAxisMaxValue(6f);
+        y1.setAxisMaxValue(5f);
         y1.setDrawGridLines(false);
 
         YAxis y12 = mChart.getAxisRight();
@@ -160,7 +160,7 @@ public class GraphActivity extends AppCompatActivity {
             //notify chart data have changed
             mChart.notifyDataSetChanged();
             // limit number if visible entreies
-            mChart.setVisibleXRange(6);
+            mChart.setVisibleXRange(30);
             //scroll to the last entry
             mChart.moveViewToX(data.getXValCount()-7);
         }
