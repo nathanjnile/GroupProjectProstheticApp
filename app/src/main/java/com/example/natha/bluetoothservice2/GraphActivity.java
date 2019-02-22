@@ -34,7 +34,7 @@ public class GraphActivity extends AppCompatActivity {
 
     private RelativeLayout relativeLayout;
     private LineChart mChart;
-    int foo;
+    float foo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class GraphActivity extends AppCompatActivity {
             //Log.i("List", ""+list);
             //int foo;
             try {
-                foo = Integer.parseInt(text);
+                foo = Float.parseFloat(text);
             }
             catch (NumberFormatException e)
             {
@@ -77,7 +77,7 @@ public class GraphActivity extends AppCompatActivity {
 
             addEntry();
 
-            Log.i("Integer is", ""+ foo);
+            Log.i("Float is", ""+ foo);
             //messages.append(text + "\n");
 
             //incomingMessages.setText(foo);
