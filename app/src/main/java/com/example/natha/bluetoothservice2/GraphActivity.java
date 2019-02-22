@@ -112,7 +112,7 @@ public class GraphActivity extends AppCompatActivity {
         mChart.setPinchZoom(true);
 
         //alternative backgroundColor
-        mChart.setBackgroundColor(Color.BLUE);
+        mChart.setBackgroundColor(Color.BLACK);
 
         //now , we work on data
         LineData data = new LineData();
@@ -135,7 +135,7 @@ public class GraphActivity extends AppCompatActivity {
 
         YAxis y1 = mChart.getAxisLeft();
         y1.setTextColor(Color.WHITE);
-        y1.setAxisMaxValue(150f);
+        y1.setAxisMaxValue(6f);
         y1.setDrawGridLines(false);
 
         YAxis y12 = mChart.getAxisRight();
