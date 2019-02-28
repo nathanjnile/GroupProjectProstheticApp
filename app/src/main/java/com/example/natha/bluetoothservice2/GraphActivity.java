@@ -63,13 +63,10 @@ public class GraphActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            Log.i("Data Values: ", text);
+            /*Log.i("Data Values: ", text);
             String[] values = text.split(",");
             Log.i("EMG: ", values[0]);
-            Log.i("time", values[1]);
-            //list.add(text);
-            //Log.i("List", ""+list);
-            //int foo;
+            Log.i("time", values[1]);*/
             try {
                 foo = Float.parseFloat(text);
             }
