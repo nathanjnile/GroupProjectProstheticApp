@@ -35,6 +35,8 @@ public class GraphActivity extends AppCompatActivity {
     private RelativeLayout relativeLayout;
     private LineChart mChart;
     float foo;
+    float foo1;
+    float foo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +65,13 @@ public class GraphActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            /*Log.i("Data Values: ", text);
+            Log.i("Data Values: ", text);
             String[] values = text.split(",");
             Log.i("EMG: ", values[0]);
-            Log.i("time", values[1]);*/
+            Log.i("time", values[1]);
+            //list.add(text);
+            //Log.i("List", ""+list);
+            //int foo;
             try {
                 foo = Float.parseFloat(text);
             }
@@ -75,9 +80,28 @@ public class GraphActivity extends AppCompatActivity {
                 //foo = 0;
             }
 
+            try {
+                foo1 = Float.parseFloat(values[0]);
+            }
+            catch (NumberFormatException e)
+            {
+                //foo = 0;
+            }
+
+            try {
+                foo2 = Float.parseFloat((values[1]));
+            }
+            catch (NumberFormatException e)
+            {
+                //foo = 0;
+            }
+
+            Log.i("onReceive: ","" + foo1);
+            Log.i("onReceive: ","" + foo2);
+
             addEntry();
 
-            Log.i("Float is", ""+ foo);
+            //Log.i("Float is", ""+ foo);
             //messages.append(text + "\n");
 
             //incomingMessages.setText(foo);
