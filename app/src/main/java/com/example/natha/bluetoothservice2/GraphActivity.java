@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
-import android.nfc.Tag;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,11 +21,16 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class GraphActivity extends AppCompatActivity {
+
+    LineChart mpLineChart;
+    List<Entry> entries = new ArrayList<>();
 
     //List<String> list = new ArrayList<>();
     TextView incomingMessages;
@@ -43,9 +47,11 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
-        addEmptyGraph();
+        addValues();
+        graphCreate();
+        //addEmptyGraph();
 
-        incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
+        //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         messages = new StringBuilder();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
@@ -99,7 +105,8 @@ public class GraphActivity extends AppCompatActivity {
             Log.i("onReceive: ","" + foo1);
             Log.i("onReceive: ","" + foo2);
 
-            addEntry();
+            addValues();
+            //addEntry();
 
             //Log.i("Float is", ""+ foo);
             //messages.append(text + "\n");
@@ -108,7 +115,7 @@ public class GraphActivity extends AppCompatActivity {
         }
 
     };
-
+/*
     public void addEmptyGraph() {
 
         relativeLayout = findViewById(R.id.relativeLayout);
@@ -208,5 +215,56 @@ public class GraphActivity extends AppCompatActivity {
         return set;
 
     }
+*/
 
+    public void graphCreate() {
+        mpLineChart = findViewById(R.id.line_chart);
+        LineDataSet lineDataSet1 = new LineDataSet(entries,"Data Set 1");
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(lineDataSet1);
+        LineData data = new LineData(dataSets);
+        mpLineChart.setData(data);
+        mpLineChart.invalidate();
+        lineDataSet1.setCubicIntensity(0.2f);
+        lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
+        lineDataSet1.setColor(ColorTemplate.getHoloBlue());
+        lineDataSet1.setCircleColor(ColorTemplate.getHoloBlue());
+        lineDataSet1.setLineWidth(2f);
+        lineDataSet1.setFillAlpha(65);
+        lineDataSet1.setFillColor(ColorTemplate.getHoloBlue());
+        lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
+        lineDataSet1.setValueTextColor(Color.WHITE);
+        lineDataSet1.setValueTextSize(10f);
+        //mpLineChart.setNoDataTextDescription("");
+        mpLineChart.setNoDataText("No data for the moment");
+        //mpLineChart.setHighlightEnabled(true);
+        mpLineChart.setTouchEnabled(true);
+        mpLineChart.setDragEnabled(true);
+        mpLineChart.setScaleEnabled(true);
+        mpLineChart.setDrawGridBackground(false);
+        mpLineChart.setPinchZoom(true);
+        mpLineChart.setBackgroundColor(Color.BLACK);
+        mpLineChart.setVisibleXRangeMaximum(10f);
+        mpLineChart.moveViewToX(data.getEntryCount()-7);
+        data.setValueTextColor(Color.WHITE);
+        //mpLineChart.setData(data);
+        Legend l = mpLineChart.getLegend();
+        l.setForm(Legend.LegendForm.LINE);
+        l.setTextColor(Color.WHITE);
+        XAxis x1 = mpLineChart.getXAxis();
+        x1.setTextColor(Color.WHITE);
+        x1.setDrawGridLines(false);
+        x1.setAvoidFirstLastClipping(true);
+        YAxis y1 = mpLineChart.getAxisLeft();
+        y1.setTextColor(Color.WHITE);
+        y1.setDrawGridLines(false);
+        YAxis y12 = mpLineChart.getAxisRight();
+        y12.setEnabled(false);
+    }
+
+    public void addValues(){
+        entries.add(new Entry(foo2, foo1));
+        Log.i("entriesarray", "" +entries);
+        graphCreate();
+    }
 }
