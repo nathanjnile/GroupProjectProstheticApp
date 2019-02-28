@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Black"
     tools:context=".GraphActivity">
 
     <!--<TextView
@@ -27,32 +28,28 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:onClick="goSecondActivity"
-        android:text="GoToSecond"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#000000"
+        android:textColor="@color/White"
+        android:text="GoToSecond" />
 
-   <!-- <TextView
+    <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_width="254dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="EMG Signal"
-        android:textColor="@color/colorAccent"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
+        android:textColor="@android:color/background_light"
+        android:textSize="35sp" />
 
    <!-- <RelativeLayout
         android:background="@color/colorPrimary"
@@ -69,13 +66,25 @@
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_chart"
-        android:layout_width="340dp"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="437dp"
+        android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="0dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="187dp"
+        android:layout_height="203dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="113dp"
+        android:rotation="-90"
+        android:text="EMG Signal (V)"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
