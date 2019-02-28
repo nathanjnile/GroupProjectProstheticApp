@@ -167,7 +167,7 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     private LineDataSet createSet() {
-        LineDataSet set = new LineDataSet(null,"SPL Db");
+        LineDataSet set = new LineDataSet(null,"EMG Signal");
         set.setDrawCubic(true);
         set.setCubicIntensity(0.2f);
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
