@@ -123,7 +123,7 @@ public class PrinterService extends Service {
         mConnectThread = new ConnectThread(device);
         mConnectThread.start();
         setState(STATE_CONNECTING);
-        Log.i(TAG, "Connect YAY PARTY BOI");
+        Log.i(TAG, "Connecting in connectToDevice");
     }
 
     private void setState(int state) {

@@ -219,7 +219,7 @@ public class GraphActivity extends AppCompatActivity {
 
     public void graphCreate() {
         mpLineChart = findViewById(R.id.line_chart);
-        LineDataSet lineDataSet1 = new LineDataSet(entries,"Data Set 1");
+        LineDataSet lineDataSet1 = new LineDataSet(entries,"EMG Signal");
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(lineDataSet1);
         LineData data = new LineData(dataSets);
@@ -227,44 +227,41 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.invalidate();
         lineDataSet1.setCubicIntensity(0.2f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
-        lineDataSet1.setColor(ColorTemplate.getHoloBlue());
-        lineDataSet1.setCircleColor(ColorTemplate.getHoloBlue());
+        lineDataSet1.setColor(Color.YELLOW);
+        lineDataSet1.setCircleColor(Color.YELLOW);
         lineDataSet1.setLineWidth(2f);
         lineDataSet1.setFillAlpha(65);
         lineDataSet1.setFillColor(ColorTemplate.getHoloBlue());
+        lineDataSet1.setCircleHoleColor(Color.YELLOW);
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
-        lineDataSet1.setValueTextSize(10f);
-        //mpLineChart.setNoDataTextDescription("");
+        lineDataSet1.setValueTextSize(5f);
         mpLineChart.setNoDataText("No data for the moment");
-        //mpLineChart.setHighlightEnabled(true);
         mpLineChart.setTouchEnabled(true);
         mpLineChart.setDragEnabled(true);
         mpLineChart.setScaleEnabled(true);
         mpLineChart.setDrawGridBackground(false);
         mpLineChart.setPinchZoom(true);
         mpLineChart.setBackgroundColor(Color.BLACK);
-        mpLineChart.setVisibleXRangeMaximum(10f);
+        mpLineChart.setVisibleXRangeMaximum(5f);
         mpLineChart.moveViewToX(data.getEntryCount()-7);
-        data.setValueTextColor(Color.WHITE);
-        //mpLineChart.setData(data);
         Legend l = mpLineChart.getLegend();
         l.setForm(Legend.LegendForm.LINE);
         l.setTextColor(Color.WHITE);
         XAxis x1 = mpLineChart.getXAxis();
         x1.setTextColor(Color.WHITE);
-        x1.setDrawGridLines(false);
+        x1.setDrawGridLines(true);
         x1.setAvoidFirstLastClipping(true);
         YAxis y1 = mpLineChart.getAxisLeft();
         y1.setTextColor(Color.WHITE);
-        y1.setDrawGridLines(false);
+        y1.setDrawGridLines(true);
         YAxis y12 = mpLineChart.getAxisRight();
-        y12.setEnabled(false);
+        y12.setEnabled(true);
     }
 
     public void addValues(){
         entries.add(new Entry(foo2, foo1));
-        Log.i("entriesarray", "" +entries);
+        //Log.i("entriesarray", "" +entries);
         graphCreate();
     }
 }
