@@ -78,13 +78,13 @@ public class GraphActivity extends AppCompatActivity {
             //list.add(text);
             //Log.i("List", ""+list);
             //int foo;
-            try {
+            /*try {
                 foo = Float.parseFloat(text);
             }
             catch (NumberFormatException e)
             {
                 //foo = 0;
-            }
+            }*/
 
             try {
                 foo1 = Float.parseFloat(values[0]);
@@ -100,6 +100,7 @@ public class GraphActivity extends AppCompatActivity {
             catch (NumberFormatException e)
             {
                 //foo = 0;
+                foo2 = foo2 + (float) 0.01;
             }
 
             Log.i("onReceive: ","" + foo1);
@@ -225,7 +226,7 @@ public class GraphActivity extends AppCompatActivity {
         LineData data = new LineData(dataSets);
         mpLineChart.setData(data);
         mpLineChart.invalidate();
-        lineDataSet1.setCubicIntensity(0.2f);
+        lineDataSet1.setCubicIntensity(0.05f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet1.setColor(Color.YELLOW);
         lineDataSet1.setCircleColor(Color.YELLOW);
@@ -236,6 +237,7 @@ public class GraphActivity extends AppCompatActivity {
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
         lineDataSet1.setValueTextSize(5f);
+        lineDataSet1.setDrawValues(false);
         mpLineChart.setNoDataText("No data for the moment");
         mpLineChart.setTouchEnabled(true);
         mpLineChart.setDragEnabled(true);
@@ -243,7 +245,7 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.setDrawGridBackground(false);
         mpLineChart.setPinchZoom(true);
         mpLineChart.setBackgroundColor(Color.BLACK);
-        mpLineChart.setVisibleXRangeMaximum(5f);
+        mpLineChart.setVisibleXRangeMaximum(3f);
         mpLineChart.moveViewToX(data.getEntryCount()-7);
         Legend l = mpLineChart.getLegend();
         l.setForm(Legend.LegendForm.LINE);
