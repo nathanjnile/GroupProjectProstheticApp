@@ -62,7 +62,6 @@ public class GraphActivity extends AppCompatActivity {
         //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }
 
-
     public void goSecondActivity(View view) {
         GoToSecond();
     }
@@ -248,9 +247,10 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.setBackgroundColor(Color.BLACK);
         mpLineChart.setVisibleXRangeMaximum(3f);
         mpLineChart.moveViewToX(data.getEntryCount()-7);
-        Legend l = mpLineChart.getLegend();
-        l.setForm(Legend.LegendForm.LINE);
-        l.setTextColor(Color.WHITE);
+        //Legend l = mpLineChart.getLegend();
+        //l.setForm(Legend.LegendForm.LINE);
+        //l.setTextColor(Color.WHITE);
+        //l.setXOffset(70f);
         XAxis x1 = mpLineChart.getXAxis();
         x1.setTextColor(Color.WHITE);
         x1.setDrawGridLines(true);

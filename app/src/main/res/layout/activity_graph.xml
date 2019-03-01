@@ -72,14 +72,14 @@
         android:id="@+id/line_chart"
         android:layout_width="wrap_content"
         android:layout_height="437dp"
+        android:layout_above="@+id/textView3"
         android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="2dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -91,6 +91,16 @@
         android:layout_marginTop="113dp"
         android:rotation="-90"
         android:text="@string/EMG_Signal_axis"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="@string/seconds_axis"
         android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
