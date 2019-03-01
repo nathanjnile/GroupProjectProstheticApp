@@ -226,7 +226,7 @@ public class GraphActivity extends AppCompatActivity {
         LineData data = new LineData(dataSets);
         mpLineChart.setData(data);
         mpLineChart.invalidate();
-        lineDataSet1.setCubicIntensity(0.05f);
+        lineDataSet1.setCubicIntensity(0.2f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet1.setColor(Color.YELLOW);
         lineDataSet1.setCircleColor(Color.YELLOW);
@@ -236,6 +236,7 @@ public class GraphActivity extends AppCompatActivity {
         lineDataSet1.setCircleHoleColor(Color.YELLOW);
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
+        lineDataSet1.setCircleRadius(1f);
         lineDataSet1.setValueTextSize(5f);
         lineDataSet1.setDrawValues(false);
         mpLineChart.setNoDataText("No data for the moment");
@@ -254,6 +255,7 @@ public class GraphActivity extends AppCompatActivity {
         x1.setTextColor(Color.WHITE);
         x1.setDrawGridLines(true);
         x1.setAvoidFirstLastClipping(true);
+        x1.setPosition(XAxis.XAxisPosition.BOTTOM);
         YAxis y1 = mpLineChart.getAxisLeft();
         y1.setTextColor(Color.WHITE);
         y1.setDrawGridLines(true);

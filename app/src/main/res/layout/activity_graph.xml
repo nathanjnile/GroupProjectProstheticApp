@@ -30,24 +30,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:onClick="goSecondActivity"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="22dp"
         android:background="#000000"
-        android:textColor="@color/White"
-        android:text="GoToSecond" />
+        android:onClick="goSecondActivity"
+        android:text="@string/gotosecond"
+        android:textColor="@color/White" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="254dp"
         android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="31dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/button2"
         android:gravity="center"
-        android:text="EMG Signal"
+        android:text="@string/EMG_Signal"
         android:textColor="@android:color/background_light"
         android:textSize="35sp" />
 
@@ -71,9 +75,11 @@
         android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="0dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -84,7 +90,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="113dp"
         android:rotation="-90"
-        android:text="EMG Signal (V)"
+        android:text="@string/EMG_Signal_axis"
         android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
