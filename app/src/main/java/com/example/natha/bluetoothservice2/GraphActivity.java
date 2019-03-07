@@ -33,14 +33,10 @@ public class GraphActivity extends AppCompatActivity {
     LineChart mpLineChart;
     List<Entry> entries = new ArrayList<>();
 
-    //List<String> list = new ArrayList<>();
-    TextView incomingMessages;
-    StringBuilder messages;
-
     float foo1;
     float foo2;
 
-    private GestureDetectorCompat gestureObject;
+    //private GestureDetectorCompat gestureObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +48,8 @@ public class GraphActivity extends AppCompatActivity {
         //addEmptyGraph();
 
         //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
-        messages = new StringBuilder();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+        //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
 
     public void GoToSecond() {
@@ -159,7 +154,7 @@ public class GraphActivity extends AppCompatActivity {
         graphCreate();
     }
 
-    // Method to capture motion events for swiping between activities
+   /* // Method to capture motion events for swiping between activities
     @Override
     public boolean onTouchEvent (MotionEvent event){
         this.gestureObject.onTouchEvent(event);
@@ -181,5 +176,5 @@ public class GraphActivity extends AppCompatActivity {
             }
             return true;
         }
-    }
+    }*/
 }

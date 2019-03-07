@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView legImage;
     int pic = R.drawable.leftfacing; //set initial image as left facing prosthetic
     // Gesture object to change activity when swiping
-    private GestureDetectorCompat gestureObject;
+    //private GestureDetectorCompat gestureObject;
    // TextView incomingMessages;
     //StringBuilder messages;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
         startService(serviceIntent); // starts the service
-        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+        //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
 
     public void graph1() {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Method to capture motion events for swiping between activities
+   /* // Method to capture motion events for swiping between activities
     @Override
     public boolean onTouchEvent (MotionEvent event){
         this.gestureObject.onTouchEvent(event);
@@ -105,10 +105,10 @@ public class MainActivity extends AppCompatActivity {
             if (event2.getX() > event1.getX()){ // action when swiping left
                 graph1();
             }
-            /*else if(event2.getX() < event1.getX()){ // action when swiping right
+            else if(event2.getX() < event1.getX()){ // action when swiping right
                 Contact();
-            }*/
+            }
             return true;
         }
-    }
+    }*/
 }

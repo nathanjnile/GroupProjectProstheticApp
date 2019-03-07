@@ -53,17 +53,19 @@ public class PrinterService extends Service {
     public void onCreate() {
         Log.d("PrinterService", "Service started");
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         super.onCreate();
     }
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            //String text = intent.getStringExtra("theMessage");
+        }
+    };
 
-            //messages.append(text + "\n");
-
-            //incomingMessages.setText(text);
+    BroadcastReceiver mReceiver2 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
         }
     };
 
