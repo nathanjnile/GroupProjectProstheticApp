@@ -2,6 +2,6 @@
     <string name="app_name">GDP53</string>
     <string name="EMG_Signal">EMG Signal</string>
     <string name="EMG_Signal_axis">EMG Signal (V)</string>
-    <string name="gotosecond">GoToSecond</string>
+    <string name="go_to_second">GoToSecond</string>
     <string name="seconds_axis">Seconds (s)</string>
 </resources>

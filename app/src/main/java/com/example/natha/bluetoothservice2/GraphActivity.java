@@ -54,7 +54,7 @@ public class GraphActivity extends AppCompatActivity {
     public void GoToSecond() {
         Intent myintent6 = new Intent(this, StepActivity.class); // new intent of analytics activity
         startActivity(myintent6); // start activity , switch to graph1
-        //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }
 
     public void goSecondActivity(View view) {

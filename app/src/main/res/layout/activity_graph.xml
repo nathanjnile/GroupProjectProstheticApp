@@ -34,7 +34,7 @@
         android:layout_marginEnd="22dp"
         android:background="#000000"
         android:onClick="goSecondActivity"
-        android:text="@string/gotosecond"
+        android:text="@string/go_to_second"
         android:textColor="@color/White" />
 
     <TextView

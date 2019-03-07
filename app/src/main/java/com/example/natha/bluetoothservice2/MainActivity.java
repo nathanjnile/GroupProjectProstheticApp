@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void graph1() {
         Intent myintent5 = new Intent(this, GraphActivity.class); // new intent of analytics activity
         startActivity(myintent5); // start activity , switch to graph1
-        //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }
 
     public void goGraphActivity(View view) {
