@@ -5,9 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Printer;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private Intent serviceIntent;
     ImageView legImage;
     int pic = R.drawable.leftfacing; //set initial image as left facing prosthetic
+    // Gesture object to change activity when swiping
+    private GestureDetectorCompat gestureObject;
    // TextView incomingMessages;
     //StringBuilder messages;
 
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
         startService(serviceIntent); // starts the service
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
 
     public void graph1() {
@@ -79,6 +85,30 @@ public class MainActivity extends AppCompatActivity {
             legImage = (ImageView) findViewById(R.id.legImage);
             legImage.setImageDrawable(getDrawable(R.drawable.leftfacing));
             pic = R.drawable.leftfacing;
+        }
+    }
+
+    // Method to capture motion events for swiping between activities
+    @Override
+    public boolean onTouchEvent (MotionEvent event){
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    // Class to learn swipe gesture
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener{
+        // SimpleOnGestureListener listens for what we want to do and how
+
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2,
+                               float velocityX, float velocityY){
+            if (event2.getX() > event1.getX()){ // action when swiping left
+                graph1();
+            }
+            /*else if(event2.getX() < event1.getX()){ // action when swiping right
+                Contact();
+            }*/
+            return true;
         }
     }
 }

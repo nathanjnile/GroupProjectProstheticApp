@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,6 +40,8 @@ public class GraphActivity extends AppCompatActivity {
     float foo1;
     float foo2;
 
+    private GestureDetectorCompat gestureObject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,7 @@ public class GraphActivity extends AppCompatActivity {
         //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         messages = new StringBuilder();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
 
     public void GoToSecond() {
@@ -151,5 +157,29 @@ public class GraphActivity extends AppCompatActivity {
         entries.add(new Entry(foo2, foo1));
         //Log.i("entriesarray", "" +entries);
         graphCreate();
+    }
+
+    // Method to capture motion events for swiping between activities
+    @Override
+    public boolean onTouchEvent (MotionEvent event){
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    // Class to learn swipe gesture
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener{
+        // SimpleOnGestureListener listens for what we want to do and how
+
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2,
+                               float velocityX, float velocityY){
+            if (event2.getX() > event1.getX()){ // action when swiping left
+
+            }
+            else if(event2.getX() < event1.getX()){ // action when swiping right
+                finish();
+            }
+            return true;
+        }
     }
 }
