@@ -10,11 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -54,7 +52,7 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     public void GoToSecond() {
-        Intent myintent6 = new Intent(this, SecondActivity.class); // new intent of analytics activity
+        Intent myintent6 = new Intent(this, StepActivity.class); // new intent of analytics activity
         startActivity(myintent6); // start activity , switch to graph1
         //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }

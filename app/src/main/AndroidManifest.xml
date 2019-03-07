@@ -11,7 +11,7 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/morty_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -27,7 +27,7 @@
         <service android:name=".PrinterService" />
 
         <activity android:name=".GraphActivity" ></activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".StepActivity"></activity>
     </application>
 
 </manifest>

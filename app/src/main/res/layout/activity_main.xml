@@ -34,17 +34,16 @@
         app:srcCompat="@drawable/leftfacing" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:onClick="goGraphActivity"
-        android:text="Graph"
+        android:src="@drawable/line_graph_icon"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="#000000"
-        android:textColor="@color/White"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
