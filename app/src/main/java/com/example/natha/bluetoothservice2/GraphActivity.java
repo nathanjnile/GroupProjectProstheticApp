@@ -36,9 +36,6 @@ public class GraphActivity extends AppCompatActivity {
     TextView incomingMessages;
     StringBuilder messages;
 
-    private RelativeLayout relativeLayout;
-    private LineChart mChart;
-    float foo;
     float foo1;
     float foo2;
 
@@ -74,16 +71,6 @@ public class GraphActivity extends AppCompatActivity {
             String[] values = text.split(",");
             Log.i("EMG: ", values[0]);
             Log.i("time", values[1]);
-            //list.add(text);
-            //Log.i("List", ""+list);
-            //int foo;
-            /*try {
-                foo = Float.parseFloat(text);
-            }
-            catch (NumberFormatException e)
-            {
-                //foo = 0;
-            }*/
 
             try {
                 foo1 = Float.parseFloat(values[0]);
@@ -115,107 +102,6 @@ public class GraphActivity extends AppCompatActivity {
         }
 
     };
-/*
-    public void addEmptyGraph() {
-
-        relativeLayout = findViewById(R.id.relativeLayout);
-
-
-        // create line chart
-        mChart =  new LineChart(this);
-        //add to  layout
-        relativeLayout.addView(mChart);
-        //customize line chart
-        mChart.setNoDataTextDescription("");
-        mChart.setNoDataText("No data for the moment");
-
-        //enable value highlighting
-        mChart.setHighlightEnabled(true);
-        //enable touch
-        mChart.setTouchEnabled(true);
-        //we want also scaling and dragging
-        mChart.setDragEnabled(true);
-        mChart.setScaleEnabled(true);
-        mChart.setDrawGridBackground(false);
-
-        //enable pinch zoom to avoid scaling x and y axis separately
-
-        mChart.setPinchZoom(true);
-
-        //alternative backgroundColor
-        mChart.setBackgroundColor(Color.BLACK);
-
-        //now , we work on data
-        LineData data = new LineData();
-        data.setValueTextColor(Color.WHITE);
-
-        //  add data to line chart
-        mChart.setData(data);
-
-        // get legend object
-        Legend l = mChart.getLegend();
-
-        //customize legend
-        l.setForm(Legend.LegendForm.LINE);
-        l.setTextColor(Color.WHITE);
-
-        XAxis x1 = mChart.getXAxis();
-        x1.setTextColor(Color.WHITE);
-        x1.setDrawGridLines(false);
-        x1.setAvoidFirstLastClipping(true);
-
-        YAxis y1 = mChart.getAxisLeft();
-        y1.setTextColor(Color.WHITE);
-        y1.setAxisMaxValue(5f);
-        y1.setDrawGridLines(false);
-
-        YAxis y12 = mChart.getAxisRight();
-        y12.setEnabled(false);
-    }
-
-    private void addEntry(){
-        LineData data = mChart.getData();
-
-        if (data != null) {
-            LineDataSet set = data.getDataSetByIndex(0);
-
-            if (set == null) {
-                //creation if null
-                set = createSet();
-                data.addDataSet(set);
-            }
-            // add a new random value
-            data.addXValue("");
-            data.addEntry(new Entry(foo, set.getEntryCount()),0);
-
-            //notify chart data have changed
-            mChart.notifyDataSetChanged();
-            // limit number if visible entreies
-            mChart.setVisibleXRange(30);
-            //scroll to the last entry
-            mChart.moveViewToX(data.getXValCount()-7);
-        }
-    }
-
-    private LineDataSet createSet() {
-        LineDataSet set = new LineDataSet(null,"EMG Signal");
-        set.setDrawCubic(true);
-        set.setCubicIntensity(0.2f);
-        set.setAxisDependency(YAxis.AxisDependency.LEFT);
-        set.setColor(ColorTemplate.getHoloBlue());
-        set.setCircleColor(ColorTemplate.getHoloBlue());
-        set.setLineWidth(2f);
-        set.setCircleSize(4f);
-        set.setFillAlpha(65);
-        set.setFillColor(ColorTemplate.getHoloBlue());
-        set.setHighLightColor(Color.rgb(244,117,177));
-        set.setValueTextColor(Color.WHITE);
-        set.setValueTextSize(4f);
-
-        return set;
-
-    }
-*/
 
     public void graphCreate() {
         mpLineChart = findViewById(R.id.line_chart);
