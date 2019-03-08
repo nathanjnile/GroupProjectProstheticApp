@@ -35,7 +35,7 @@ public class GraphActivity extends AppCompatActivity {
 
     float foo1;
     float foo2;
-    //hello
+
     //private GestureDetectorCompat gestureObject;
 
     @Override

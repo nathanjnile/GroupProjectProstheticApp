@@ -71,4 +71,22 @@
         app:layout_constraintEnd_toStartOf="@+id/legImage"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/InclineStatusText"
+        android:layout_width="192dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="73dp"
+        android:text="Incline Status"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:background="@color/Green"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legImage" />
+
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 public class StepActivity extends AppCompatActivity {
 
+    Float stepsValue;
     TextView incomingMessages;
 
     @Override
@@ -41,7 +44,21 @@ public class StepActivity extends AppCompatActivity {
             String[] values2 = text2.split(",");
             Log.i("values2", values2[2]);
             String text3 = values2[2];
+            try {
+                stepsValue = Float.parseFloat(text3);
+            }
+            catch (NumberFormatException e)
+            {
+                //foo = 0;
+            }
+
             incomingMessages.setText(text3);
+            Log.i("onReceive: ", "" +stepsValue);
+            if (stepsValue % 2 == 0) {
+                incomingMessages.setBackgroundColor(Color.YELLOW);
+            }   else {
+                incomingMessages.setBackgroundColor(Color.GREEN);
+            }
         }
     };
 }
