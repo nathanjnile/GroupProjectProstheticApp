@@ -42,8 +42,8 @@ public class StepActivity extends AppCompatActivity {
             String text2 = intent.getStringExtra("theMessage");
             //Log.i("text2: ", text2);
             String[] values2 = text2.split(",");
-            Log.i("values2", values2[2]);
-            String text3 = values2[2];
+            Log.i("values2", values2[6]);
+            String text3 = values2[6];
             try {
                 stepsValue = Float.parseFloat(text3);
             }

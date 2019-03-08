@@ -78,7 +78,7 @@ public class GraphActivity extends AppCompatActivity {
             {
                 //foo = 0;
             }
-
+            Log.i("foo1: ","" +foo1);
             try {
                 foo2 = Float.parseFloat((values[1]));
             }
@@ -88,16 +88,8 @@ public class GraphActivity extends AppCompatActivity {
                 foo2 = foo2 + (float) 0.01;
             }
 
-            Log.i("onReceive: ","" + foo1);
-            Log.i("onReceive: ","" + foo2);
-
             addValues();
-            //addEntry();
 
-            //Log.i("Float is", ""+ foo);
-            //messages.append(text + "\n");
-
-            //incomingMessages.setText(foo);
         }
 
     };
@@ -131,7 +123,7 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.setPinchZoom(true);
         mpLineChart.setBackgroundColor(Color.BLACK);
         mpLineChart.setVisibleXRangeMaximum(3f);
-        mpLineChart.moveViewToX(data.getEntryCount()-7);
+        mpLineChart.moveViewToX(data.getEntryCount());
         //Legend l = mpLineChart.getLegend();
         //l.setForm(Legend.LegendForm.LINE);
         //l.setTextColor(Color.WHITE);
@@ -150,7 +142,7 @@ public class GraphActivity extends AppCompatActivity {
 
     public void addValues(){
         entries.add(new Entry(foo2, foo1));
-        //Log.i("entriesarray", "" +entries);
+        Log.i("entriesarray", "" +entries);
         graphCreate();
     }
 
