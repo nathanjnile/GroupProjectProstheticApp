@@ -4,10 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Printer;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -22,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
     int pic = R.drawable.leftfacing; //set initial image as left facing prosthetic
     // Gesture object to change activity when swiping
     //private GestureDetectorCompat gestureObject;
-   // TextView incomingMessages;
-    //StringBuilder messages;
+    Float stepsValue;
+    Float inclineValue;
+    TextView incomingMessages;
+    TextView inclineTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
         startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
+        incomingMessages = (TextView) findViewById(R.id.incomingMessage);
+        inclineTextView = (TextView) findViewById(R.id.inclineStatusText);
     }
 
     public void graph1() {
@@ -111,4 +118,46 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }*/
+
+    BroadcastReceiver mReceiver2 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String text2 = intent.getStringExtra("theMessage");
+            //Log.i("text2: ", text2);
+            String[] values2 = text2.split(",");
+            Log.i("values2", values2[6]);
+            String text3 = values2[6];
+            try {
+                stepsValue = Float.parseFloat(text3);
+            }
+            catch (NumberFormatException e)
+            {
+                //foo = 0;
+            }
+
+            incomingMessages.setText(text3);
+            Log.i("onReceive: ", "" +stepsValue);
+            if (stepsValue % 2 == 0) {
+                incomingMessages.setBackgroundColor(Color.YELLOW);
+            }   else {
+                incomingMessages.setBackgroundColor(Color.GREEN);
+            }
+
+            String inclineStatus = values2[5];
+
+            try {
+                inclineValue = Float.parseFloat(inclineStatus);
+            }
+            catch (NumberFormatException e)
+            {
+                //foo = 0;
+            }
+
+            if (inclineValue == 0) {
+                inclineTextView.setText("Flat Ground");
+            }   else {
+                inclineTextView.setText("Incline Ground");
+            }
+        }
+    };
 }

@@ -24,18 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.329" />-->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="22dp"
-        android:background="#000000"
-        android:onClick="goSecondActivity"
-        android:text="@string/go_to_second"
-        android:textColor="@color/White" />
 
     <TextView
         android:id="@+id/textView"
@@ -43,13 +31,13 @@
         android:layout_height="49dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginEnd="122dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_toStartOf="@+id/button2"
         android:gravity="center"
         android:text="@string/EMG_Signal"
         android:textColor="@android:color/background_light"
@@ -71,13 +59,13 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_chart"
         android:layout_width="wrap_content"
-        android:layout_height="437dp"
+        android:layout_height="417dp"
         android:layout_above="@+id/textView3"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp" />
 
