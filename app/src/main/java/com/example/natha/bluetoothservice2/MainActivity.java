@@ -14,12 +14,16 @@ import android.util.Printer;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.nio.charset.Charset;
 
 public class MainActivity extends AppCompatActivity {
 
     private Intent serviceIntent;
+    private static final String TAG = "OutputStream";
     ImageView legImage;
     int pic = R.drawable.leftfacing; //set initial image as left facing prosthetic
     // Gesture object to change activity when swiping
@@ -28,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     Float inclineValue;
     TextView incomingMessages;
     TextView inclineTextView;
+    Button btnMoveFootUp;
+    Button btnMoveFootDown;
+    PrinterService mPrinterService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,25 @@ public class MainActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         incomingMessages = (TextView) findViewById(R.id.incomingMessage);
         inclineTextView = (TextView) findViewById(R.id.inclineStatusText);
+        btnMoveFootUp = (Button) findViewById(R.id.btnMoveFootUp);
+        btnMoveFootDown = (Button) findViewById(R.id.btnMoveFootDown);
+
+        btnMoveFootUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "MoveFootUp".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
+
+        btnMoveFootDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "MoveFootDown".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
+
     }
 
     public void graph1() {

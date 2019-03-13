@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.UUID;
 import java.util.Vector;
 
@@ -170,11 +171,11 @@ public class PrinterService extends Service {
 
     private void connectionFailed() {
         PrinterService.this.stop();
-        Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
+        //Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
         bundle.putString(AbstractActivity.TOAST, "unable to connect to device");
-        msg.setData(bundle);
-        mHandler.sendMessage(msg);
+        //msg.setData(bundle);
+        //mHandler.sendMessage(msg);
         Log.d(TAG, "Connection failed");
     }
 
@@ -324,12 +325,14 @@ public class PrinterService extends Service {
         private byte[] btBuff;
 
 
-        public void write(byte[] buffer) {
+        public void write(byte[] bytes) {
+            String text = new String(bytes, Charset.defaultCharset());
+            Log.d(TAG, "write: Writing to outputstream: " + text);
             try {
-                mmOutStream.write(buffer);
-
+                mmOutStream.write(bytes);
+                Log.d(TAG, "After it should be written " + text);
                 // Share the sent message back to the UI Activity
-                mHandler.obtainMessage(AbstractActivity.MESSAGE_WRITE, buffer.length, -1, buffer).sendToTarget();
+                //mHandler.obtainMessage(AbstractActivity.MESSAGE_WRITE, buffer.length, -1, buffer).sendToTarget();
             } catch (IOException e) {
                 Log.e("PrinterService", "Exception during write", e);
             }
