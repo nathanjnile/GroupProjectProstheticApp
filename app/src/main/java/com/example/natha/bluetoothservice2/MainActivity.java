@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Methods for right button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
-    public void ImageChangeButtonRight(View view) {
+/*    public void ImageChangeButtonRight(View view) {
         if (pic == R.drawable.leftfacing) { //if prosthetic is facing left
             legImage = (ImageView) findViewById(R.id.legImage);
             legImage.setImageDrawable(getDrawable(R.drawable.frontfacing));
@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
         }
         //legImage=(ImageView) findViewById(R.id.legImage);
         //legImage.setImageDrawable(getDrawable(R.drawable.frontfacing));
-    }
+    }*/
     //Methods for left button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
-    public void ImageChangeButtonLeft(View view) {
+ /*   public void ImageChangeButtonLeft(View view) {
         if (pic == R.drawable.leftfacing) {
             legImage = (ImageView) findViewById(R.id.legImage);
             legImage.setImageDrawable(getDrawable(R.drawable.backfacing));
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             legImage.setImageDrawable(getDrawable(R.drawable.leftfacing));
             pic = R.drawable.leftfacing;
         }
-    }
+    }*/
 
    /* // Method to capture motion events for swiping between activities
     @Override

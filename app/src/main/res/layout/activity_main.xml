@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Black"
+    android:background="@color/Grey"
     tools:context=".MainActivity">
 
     <!--<TextView
@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/legImage"
         android:layout_width="117dp"
         android:layout_height="211dp"
@@ -31,22 +31,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/leftfacing" />
+        app:srcCompat="@drawable/leftfacing" />-->
 
 
     <ImageButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="316dp"
         android:background="#000000"
         android:onClick="goGraphActivity"
         android:src="@drawable/line_graph_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <!--  <Button
 
         android:id="@+id/btnClickRight"
         android:layout_width="45dp"
@@ -57,9 +56,9 @@
         android:onClick="ImageChangeButtonRight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
+  <!--  <Button
         android:id="@+id/btnClickLeft"
         android:layout_width="45dp"
         android:layout_height="45dp"
@@ -69,7 +68,7 @@
         android:onClick="ImageChangeButtonLeft"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/inclineStatusText"
@@ -87,7 +86,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/legImage"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -117,29 +115,16 @@
         android:id="@+id/btnMoveFootUp"
         android:layout_width="48dp"
         android:layout_height="45dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
         android:text="Up"
-        app:layout_constraintBottom_toTopOf="@+id/legImage"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="316dp" />
 
     <Button
         android:id="@+id/btnMoveFootDown"
         android:layout_width="90dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Down"
-        app:layout_constraintBottom_toTopOf="@+id/legImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toEndOf="@+id/btnMoveFootUp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="330dp" />
 
 </android.support.constraint.ConstraintLayout>
