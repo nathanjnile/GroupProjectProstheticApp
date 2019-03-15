@@ -63,10 +63,9 @@
         android:id="@+id/inclineStatusText"
         android:layout_width="192dp"
         android:layout_height="42dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="108dp"
         android:background="@color/Green"
         android:gravity="center"
         android:text="Incline Status"
@@ -74,8 +73,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/incomingMessage"
@@ -86,9 +84,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="64dp"
         android:background="@color/Green"
         android:gravity="center"
         android:text="Step Counter"
@@ -96,97 +93,79 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="@+id/btnMoveFootUp" />
 
     <Button
         android:id="@+id/btnMoveFootUp"
         android:layout_width="48dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Up"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnMoveFootDown"
         android:layout_width="90dp"
         android:layout_height="43dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Down"
-        tools:layout_editor_absoluteX="249dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="267dp"
         android:background="@null"
         android:cropToPadding="false"
         android:onClick="goGraphActivity"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
         app:srcCompat="@drawable/graphbutton" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="15.33dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
         app:srcCompat="@drawable/controlbutton" />
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="15.33dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
         app:srcCompat="@drawable/clinicalinfobutton" />
 
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="15.33dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
         app:srcCompat="@drawable/bluetoothbutton" />
 
 
