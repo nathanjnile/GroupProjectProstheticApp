@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         btnMoveFootUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                byte[] bytes = "MoveFootUp".getBytes();
+                byte[] bytes = "Plantarflex".getBytes();
                 mPrinterService.write(bytes);
             }
         });
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         btnMoveFootDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                byte[] bytes = "MoveFootDown".getBytes();
+                byte[] bytes = "Dorsiflex".getBytes();
                 mPrinterService.write(bytes);
             }
         });
