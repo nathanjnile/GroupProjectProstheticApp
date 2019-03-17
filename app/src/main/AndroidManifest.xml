@@ -26,7 +26,8 @@
 
         <service android:name=".PrinterService" />
 
-        <activity android:name=".GraphActivity" ></activity>
+        <activity android:name=".GraphActivity" />
+        <activity android:name=".ControlActivity"></activity>
     </application>
 
 </manifest>

@@ -139,6 +139,7 @@
         android:layout_marginStart="15.33dp"
         android:layout_marginTop="30dp"
         android:background="@null"
+        android:onClick="goControlActivity"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
