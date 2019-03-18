@@ -45,7 +45,6 @@ public class GraphActivity extends AppCompatActivity {
 
         addValues();
         graphCreate();
-        //addEmptyGraph();
 
         //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));

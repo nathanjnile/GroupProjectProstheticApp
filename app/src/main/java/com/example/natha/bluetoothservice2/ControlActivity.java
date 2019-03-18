@@ -13,7 +13,10 @@ public class ControlActivity extends AppCompatActivity {
     ImageView controlfoot;
     Button upbutton;
     Button downbutton;
+    Button lockbutton;
+    Button unlockbutton;
     int angle;
+    PrinterService mPrinterService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +26,15 @@ public class ControlActivity extends AppCompatActivity {
         controlfoot = (ImageView) findViewById(R.id.controlfootimage);
         upbutton = (Button) findViewById(R.id.upbutton);
         downbutton = (Button) findViewById(R.id.downbutton);
+        lockbutton = (Button) findViewById(R.id.lockbutton);
+        unlockbutton = (Button) findViewById(R.id.unlockbutton);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 angle = angle - 10;
-
+                byte[] bytes = "Dorsiflex".getBytes();
+                mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
             }
         });
@@ -37,11 +43,27 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 angle = angle + 10;
-
+                byte[] bytes = "Plantarflex".getBytes();
+                mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
             }
         });
 
+        lockbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "lockfoot".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
+
+        unlockbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "unlockfoot".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
 
     }
 }
