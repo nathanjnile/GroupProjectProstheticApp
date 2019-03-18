@@ -15,6 +15,8 @@ public class ControlActivity extends AppCompatActivity {
     Button downbutton;
     Button lockbutton;
     Button unlockbutton;
+    Button maxbutton;
+    Button minbutton;
     int angle;
     PrinterService mPrinterService;
 
@@ -28,12 +30,14 @@ public class ControlActivity extends AppCompatActivity {
         downbutton = (Button) findViewById(R.id.downbutton);
         lockbutton = (Button) findViewById(R.id.lockbutton);
         unlockbutton = (Button) findViewById(R.id.unlockbutton);
+        maxbutton = (Button) findViewById(R.id.maxbutton);
+        minbutton = (Button) findViewById(R.id.minbutton);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 angle = angle - 10;
-                byte[] bytes = "Dorsiflex".getBytes();
+                byte[] bytes = "dorsiflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
             }
@@ -43,7 +47,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 angle = angle + 10;
-                byte[] bytes = "Plantarflex".getBytes();
+                byte[] bytes = "plantarflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
             }
@@ -52,7 +56,7 @@ public class ControlActivity extends AppCompatActivity {
         lockbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                byte[] bytes = "lockfoot".getBytes();
+                byte[] bytes = "lock".getBytes();
                 mPrinterService.write(bytes);
             }
         });
@@ -60,7 +64,23 @@ public class ControlActivity extends AppCompatActivity {
         unlockbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                byte[] bytes = "unlockfoot".getBytes();
+                byte[] bytes = "unlock".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
+
+        maxbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "maxdorsiflex".getBytes();
+                mPrinterService.write(bytes);
+            }
+        });
+
+        minbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "maxplantarflex".getBytes();
                 mPrinterService.write(bytes);
             }
         });
