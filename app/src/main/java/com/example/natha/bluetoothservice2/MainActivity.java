@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
     Float inclineValue;
     TextView incomingMessages;
     TextView inclineTextView;
-    Button btnMoveFootUp;
-    Button btnMoveFootDown;
-    PrinterService mPrinterService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,25 +44,6 @@ public class MainActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         incomingMessages = (TextView) findViewById(R.id.incomingMessage);
         inclineTextView = (TextView) findViewById(R.id.inclineStatusText);
-        btnMoveFootUp = (Button) findViewById(R.id.btnMoveFootUp);
-        btnMoveFootDown = (Button) findViewById(R.id.btnMoveFootDown);
-
-        btnMoveFootUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                byte[] bytes = "Plantarflex".getBytes();
-                mPrinterService.write(bytes);
-            }
-        });
-
-        btnMoveFootDown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                byte[] bytes = "Dorsiflex".getBytes();
-                mPrinterService.write(bytes);
-            }
-        });
-
     }
 
     public void graph1() {
