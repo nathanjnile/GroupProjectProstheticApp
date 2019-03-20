@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
-        incomingMessages = (TextView) findViewById(R.id.incomingMessage);
-        inclineTextView = (TextView) findViewById(R.id.inclineStatusText);
+        incomingMessages = (TextView) findViewById(R.id.stepCounterStatus);
+        inclineTextView = (TextView) findViewById(R.id.angleTextStatus);
     }
 
     public void graph1() {
@@ -151,11 +151,11 @@ public class MainActivity extends AppCompatActivity {
 
             incomingMessages.setText(text3);
             Log.i("onReceive: ", "" +stepsValue);
-            if (stepsValue % 2 == 0) {
+            /*if (stepsValue % 2 == 0) {
                 incomingMessages.setBackgroundColor(Color.YELLOW);
             }   else {
                 incomingMessages.setBackgroundColor(Color.GREEN);
-            }
+            }*/
 
             String inclineStatus = values2[5];
 

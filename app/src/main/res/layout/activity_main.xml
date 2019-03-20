@@ -60,147 +60,91 @@
         app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
-        android:id="@+id/inclineStatusText"
-        android:layout_width="192dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="64dp"
-        android:background="@color/Green"
-        android:gravity="center"
-        android:text="Incline Status"
-        android:textColor="@color/White"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/incomingMessage"
-        android:layout_width="192sp"
-        android:layout_height="37sp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/Green"
-        android:gravity="center"
-        android:text="Step Counter"
-        android:textColor="@color/Black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/bluetoothTextStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
         android:text="Connected"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/bluetoothText"
+        app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
+        app:layout_constraintTop_toTopOf="@+id/bluetoothText" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/stepCounterStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
         android:text="0"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/stepCounterText"
+        app:layout_constraintEnd_toEndOf="@+id/bluetoothTextStatus"
+        app:layout_constraintTop_toTopOf="@+id/stepCounterText" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/powerTextStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
         android:text="High Power"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/powerText"
+        app:layout_constraintEnd_toEndOf="@+id/stepCounterStatus"
+        app:layout_constraintTop_toTopOf="@+id/powerText" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/controlTextStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
         android:text="DF Lock"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/controlText"
+        app:layout_constraintEnd_toEndOf="@+id/powerTextStatus"
+        app:layout_constraintTop_toTopOf="@+id/controlText" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/angleTextStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="324dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
         android:text="Incline"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/angleText"
+        app:layout_constraintEnd_toEndOf="@+id/controlTextStatus"
+        app:layout_constraintTop_toTopOf="@+id/angleText" />
 
     <ImageButton
-        android:id="@+id/imageView"
+        android:id="@+id/bluetoothButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_corner_buttons"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/infoButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bluetoothsymbol" />
 
     <ImageButton
-        android:id="@+id/imageView2"
+        android:id="@+id/infoButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_corner_buttons"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/controlButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/infosymbol" />
 
     <ImageButton
-        android:id="@+id/imageView3"
+        android:id="@+id/graphButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="37dp"
@@ -215,7 +159,7 @@
         app:srcCompat="@drawable/graphsymbol" />
 
     <ImageButton
-        android:id="@+id/imageView4"
+        android:id="@+id/controlButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
@@ -223,79 +167,59 @@
         android:background="@drawable/rounded_corner_buttons"
         android:onClick="goControlActivity"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/graphButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/controlsymbol" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/bluetoothText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="129dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="120dp"
         android:text="Bluetooth Status"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/graphButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/stepCounterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="Daily Step Counter"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/bluetoothText"
+        app:layout_constraintTop_toBottomOf="@+id/bluetoothText" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/powerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="Power Status"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/stepCounterText"
+        app:layout_constraintTop_toBottomOf="@+id/stepCounterText" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/controlText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="Control Status"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/powerText"
+        app:layout_constraintTop_toBottomOf="@+id/powerText" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
+        android:id="@+id/angleText"
+        android:layout_width="81dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="324dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="Angle Status"
         android:textColor="@color/White"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/controlText"
+        app:layout_constraintTop_toBottomOf="@+id/controlText" />
 
 
 </android.support.constraint.ConstraintLayout>
