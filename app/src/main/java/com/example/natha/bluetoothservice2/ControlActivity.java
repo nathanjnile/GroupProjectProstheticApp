@@ -6,17 +6,18 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class ControlActivity extends AppCompatActivity {
 
     ImageView controlfoot;
-    Button upbutton;
-    Button downbutton;
-    Button lockbutton;
-    Button unlockbutton;
-    Button maxbutton;
-    Button minbutton;
+    ImageButton upbutton;
+    ImageButton downbutton;
+    ImageButton lockbutton;
+    ImageButton unlockbutton;
+    ImageButton maxbutton;
+    ImageButton minbutton;
     int angle;
     PrinterService mPrinterService;
 
@@ -26,12 +27,11 @@ public class ControlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_control);
 
         controlfoot = (ImageView) findViewById(R.id.controlfootimage);
-        upbutton = (Button) findViewById(R.id.upbutton);
-        downbutton = (Button) findViewById(R.id.downbutton);
-        lockbutton = (Button) findViewById(R.id.lockbutton);
-        unlockbutton = (Button) findViewById(R.id.unlockbutton);
-        maxbutton = (Button) findViewById(R.id.maxbutton);
-        minbutton = (Button) findViewById(R.id.minbutton);
+        upbutton = (ImageButton) findViewById(R.id.moveupbutton);
+        downbutton = (ImageButton) findViewById(R.id.movedownbutton);
+        lockbutton = (ImageButton) findViewById(R.id.lockbutton);
+        maxbutton = (ImageButton) findViewById(R.id.maxbutton);
+        minbutton = (ImageButton) findViewById(R.id.minbutton);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,14 +57,6 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
-                mPrinterService.write(bytes);
-            }
-        });
-
-        unlockbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                byte[] bytes = "unlock".getBytes();
                 mPrinterService.write(bytes);
             }
         });
