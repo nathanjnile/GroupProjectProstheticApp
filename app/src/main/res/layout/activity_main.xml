@@ -123,8 +123,8 @@
         android:id="@+id/bluetoothButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="@dimen/button_spacing"
+        android:layout_marginTop="@dimen/top_button_spacing"
         android:background="@drawable/rounded_corner_buttons"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/infoButton"
@@ -135,12 +135,12 @@
         android:id="@+id/infoButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="@dimen/button_spacing"
         android:background="@drawable/rounded_corner_buttons"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/bluetoothButton"
         app:layout_constraintStart_toEndOf="@+id/controlButton"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bluetoothButton"
         app:srcCompat="@drawable/infosymbol" />
 
     <ImageButton
@@ -148,34 +148,34 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="267dp"
         android:background="@drawable/rounded_corner_buttons"
         android:onClick="goGraphActivity"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/controlButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/controlButton"
         app:srcCompat="@drawable/graphsymbol" />
 
     <ImageButton
         android:id="@+id/controlButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="@dimen/button_spacing"
         android:background="@drawable/rounded_corner_buttons"
         android:onClick="goControlActivity"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/infoButton"
         app:layout_constraintStart_toEndOf="@+id/graphButton"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/infoButton"
         app:srcCompat="@drawable/controlsymbol" />
 
     <TextView
         android:id="@+id/bluetoothText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing"
+        android:layout_marginTop="@dimen/text_button_spacing"
         android:text="Bluetooth Status"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/graphButton"
@@ -220,6 +220,15 @@
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/controlText"
         app:layout_constraintTop_toBottomOf="@+id/controlText" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="21dp"
+        android:layout_height="13dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/bluetoothButton"
+        app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
+        app:srcCompat="@drawable/Battery" />
 
 
 </android.support.constraint.ConstraintLayout>

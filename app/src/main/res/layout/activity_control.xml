@@ -9,10 +9,9 @@
 
     <ImageView
         android:id="@+id/controlfootimage"
-        android:layout_width="288dp"
-        android:layout_height="356dp"
+        android:layout_width="20dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="false"
@@ -22,8 +21,8 @@
         android:transformPivotY="178dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/controlfoot" />
 
     <Button
@@ -31,26 +30,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="460dp" />
 
     <Button
         android:id="@+id/downbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="down"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="488dp" />
 
     <Button
         android:id="@+id/lockbutton"
@@ -83,26 +80,117 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:text="Max"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="508dp" />
 
     <Button
         android:id="@+id/minbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:text="Min"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <TextView
+        android:id="@+id/controltitle"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="Prosthetic Control"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/homebuttoncontrol"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_corner_home_button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/controltitle"
+        app:layout_constraintEnd_toStartOf="@+id/controltitle"
+        app:srcCompat="@drawable/homebutton" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="21dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="51dp"
+        app:layout_constraintStart_toEndOf="@+id/controltitle"
+        app:layout_constraintTop_toTopOf="@+id/homebuttoncontrol"
+        app:srcCompat="@drawable/Battery" />
+
+    <TextView
+        android:id="@+id/moveupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Move Up"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/homebuttoncontrol"
+        app:layout_constraintTop_toBottomOf="@+id/controltitle" />
+
+    <TextView
+        android:id="@+id/movedownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_spacing_control"
+        android:text="Move Down"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/moveupText"
+        app:layout_constraintTop_toBottomOf="@+id/moveupText" />
+
+    <TextView
+        android:id="@+id/maxangleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_spacing_control"
+        android:text="Maximum Angle"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/movedownText"
+        app:layout_constraintTop_toBottomOf="@+id/movedownText" />
+
+    <TextView
+        android:id="@+id/minangleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_spacing_control"
+        android:text="Minimum Angle"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/maxangleText"
+        app:layout_constraintTop_toBottomOf="@+id/maxangleText" />
+
+    <TextView
+        android:id="@+id/lockangleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_spacing_control"
+        android:text="Lock Angle"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/minangleText"
+        app:layout_constraintTop_toBottomOf="@+id/minangleText" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/footcover"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="96dp" />
 
 
 </android.support.constraint.ConstraintLayout>
