@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_spacing">10dp</dimen>
-    <dimen name="text_spacing_control">35dp</dimen>
+    <dimen name="text_spacing_control">40dp</dimen>
     <dimen name="text_button_spacing">40dp</dimen>
     <dimen name="button_spacing">15dp</dimen>
     <dimen name="top_button_spacing">40dp</dimen>

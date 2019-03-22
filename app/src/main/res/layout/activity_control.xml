@@ -186,11 +186,35 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        app:srcCompat="@drawable/footcover"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="76dp" />
+        android:layout_width="81dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/moveupbutton"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/moveupbutton"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/footcover" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.333"
+        app:srcCompat="@drawable/upmovebutton" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="81dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/movedownbutton"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/movedownbutton"
+        app:srcCompat="@drawable/footcover" />
 
 </android.support.constraint.ConstraintLayout>
