@@ -66,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
         goToControl();
     }
 
+    public void contacts1() {
+        Intent myintent7 = new Intent(this, ContactsActivity.class); // new intent of analytics activity
+        startActivity(myintent7); // start activity , switch to graph1
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
+    }
+
+    public void goContactsActivity(View view) {
+        contacts1();
+    }
+
     //Methods for right button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
 /*    public void ImageChangeButtonRight(View view) {
         if (pic == R.drawable.leftfacing) { //if prosthetic is facing left

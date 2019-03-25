@@ -1,5 +1,6 @@
 package com.example.natha.bluetoothservice2;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -77,5 +78,16 @@ public class ControlActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void main1() {
+        /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
+        startActivity(myintent7); // start activity , switch to graph1*/
+        finish();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
+    }
+
+    public void goMainActivity(View view) {
+        main1();
     }
 }
