@@ -85,7 +85,7 @@ public class GraphActivity extends AppCompatActivity {
 
     public void graphCreate() {
         mpLineChart = findViewById(R.id.line_chart);
-        LineDataSet lineDataSet1 = new LineDataSet(entries,"EMG Signal");
+        LineDataSet lineDataSet1 = new LineDataSet(entries,"");
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(lineDataSet1);
         LineData data = new LineData(dataSets);
@@ -104,13 +104,14 @@ public class GraphActivity extends AppCompatActivity {
         lineDataSet1.setCircleRadius(1f);
         lineDataSet1.setValueTextSize(5f);
         lineDataSet1.setDrawValues(false);
+        lineDataSet1.setLabel("");
         mpLineChart.setNoDataText("No data for the moment");
         mpLineChart.setTouchEnabled(true);
         mpLineChart.setDragEnabled(true);
         mpLineChart.setScaleEnabled(true);
         mpLineChart.setDrawGridBackground(false);
         mpLineChart.setPinchZoom(true);
-        mpLineChart.setBackgroundColor(Color.BLACK);
+        mpLineChart.setBackgroundColor(Color.rgb(29,29,29));
         mpLineChart.setVisibleXRangeMaximum(3f);
         mpLineChart.moveViewToX(data.getEntryCount());
         //Legend l = mpLineChart.getLegend();
@@ -127,6 +128,7 @@ public class GraphActivity extends AppCompatActivity {
         y1.setDrawGridLines(true);
         YAxis y12 = mpLineChart.getAxisRight();
         y12.setEnabled(true);
+        y12.setTextColor(Color.WHITE);
     }
 
     public void addValues(){
