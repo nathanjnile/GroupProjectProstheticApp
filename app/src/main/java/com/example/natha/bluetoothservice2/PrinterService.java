@@ -55,6 +55,8 @@ public class PrinterService extends Service {
         Log.d("PrinterService", "Service started");
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver3, new IntentFilter("bluetoothFailed"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
         super.onCreate();
     }
 
@@ -69,6 +71,19 @@ public class PrinterService extends Service {
         public void onReceive(Context context, Intent intent) {
         }
     };
+
+    BroadcastReceiver mReceiver3 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+        }
+    };
+
+    BroadcastReceiver mReceiver4 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+        }
+    };
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -177,7 +192,9 @@ public class PrinterService extends Service {
         //msg.setData(bundle);
         //mHandler.sendMessage(msg);
         Log.d(TAG, "Connection failed");
+        sendFailed();
     }
+
 
     private void connectionLost() {
         PrinterService.this.stop();
@@ -221,7 +238,7 @@ public class PrinterService extends Service {
         mConnectedThread = new ConnectedThread(mmSocket);
         mConnectedThread.start();
         Log.d(TAG, "connected through connected method");
-
+        sendConnected();
         // Message msg =
         // mHandler.obtainMessage(AbstractActivity.MESSAGE_DEVICE_NAME);
         // Bundle bundle = new Bundle();
@@ -395,5 +412,18 @@ public class PrinterService extends Service {
 
     };
 
+    public void sendFailed(){
+        String bluetoothFailed = "Not Connected";
+        Intent incomingMessageIntent = new Intent("bluetoothFailed");
+        incomingMessageIntent.putExtra("theMessage2" , bluetoothFailed);
+        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+    }
+
+    public void sendConnected(){
+        String bluetoothConnected = "Connected";
+        Intent incomingMessageIntent = new Intent("bluetoothConnected");
+        incomingMessageIntent.putExtra("theMessage3" , bluetoothConnected);
+        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+    }
 
 }

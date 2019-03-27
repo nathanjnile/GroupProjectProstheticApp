@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Float inclineValue;
     TextView incomingMessages;
     TextView inclineTextView;
+    TextView bluetoothText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
         //startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver3, new IntentFilter("bluetoothFailed"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
         incomingMessages = (TextView) findViewById(R.id.stepCounterStatus);
         inclineTextView = (TextView) findViewById(R.id.angleTextStatus);
+        bluetoothText = (TextView) findViewById(R.id.bluetoothTextStatus);
     }
 
     public void graph1() {
@@ -191,6 +195,22 @@ public class MainActivity extends AppCompatActivity {
             }   else {
                 inclineTextView.setText("Incline Ground");
             }
+        }
+    };
+
+    BroadcastReceiver mReceiver3 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String text3 = intent.getStringExtra("theMessage2");
+            bluetoothText.setText(text3);
+        }
+    };
+
+    BroadcastReceiver mReceiver4 = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String text4 = intent.getStringExtra("theMessage3");
+            bluetoothText.setText(text4);
         }
     };
 }

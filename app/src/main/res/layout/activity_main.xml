@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
-        android:text="Connected"
+        android:text="Null"
         android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="@+id/bluetoothText"
         app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
