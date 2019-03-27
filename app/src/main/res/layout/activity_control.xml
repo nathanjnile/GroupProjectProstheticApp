@@ -9,21 +9,21 @@
 
     <ImageView
         android:id="@+id/controlfootimage"
-        android:layout_width="20dp"
-        android:layout_height="43dp"
+        android:layout_width="230dp"
+        android:layout_height="90dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="44dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:rotation="0"
-        android:transformPivotX="20dp"
-        android:transformPivotY="178dp"
+        android:transformPivotX="40dp"
+        android:transformPivotY="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/controlfoot" />
+        app:srcCompat="@drawable/footcover" />
 
     <ImageButton
         android:id="@+id/moveupbutton"
@@ -275,6 +275,17 @@
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:layout_constraintVertical_bias="0.59000003"
         app:srcCompat="@drawable/lockbutton" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Current Status:"
+        android:textColor="@color/White"
+
+        app:layout_constraintBottom_toTopOf="@+id/controlfootimage"
+        app:layout_constraintStart_toStartOf="@+id/lockangleText" />
 
 
 </android.support.constraint.ConstraintLayout>

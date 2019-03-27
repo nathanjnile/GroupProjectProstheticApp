@@ -37,7 +37,7 @@ public class ControlActivity extends AppCompatActivity {
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                angle = angle - 10;
+                angle = angle - 2;
                 byte[] bytes = "dorsiflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
@@ -47,7 +47,7 @@ public class ControlActivity extends AppCompatActivity {
         downbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                angle = angle + 10;
+                angle = angle + 2;
                 byte[] bytes = "plantarflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
