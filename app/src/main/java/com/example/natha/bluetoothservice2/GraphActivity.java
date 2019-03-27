@@ -44,7 +44,7 @@ public class GraphActivity extends AppCompatActivity {
         setContentView(R.layout.activity_graph);
 
         addValues();
-        graphCreate();
+        //graphCreate();
 
         //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
@@ -132,9 +132,14 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     public void addValues(){
-        entries.add(new Entry(foo2, foo1));
+        Log.i("foo1: ", "" +foo1);
+        Log.i("foo2: ", "" +foo2);
+
+        if (foo2 != 0) {
+            entries.add(new Entry(foo2, foo1));
+            graphCreate();
+        }
         Log.i("entriesarray", "" +entries);
-        graphCreate();
     }
 
    /* // Method to capture motion events for swiping between activities

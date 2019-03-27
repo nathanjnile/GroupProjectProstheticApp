@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
-        startService(serviceIntent); // starts the service
+        //serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
+        //startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         incomingMessages = (TextView) findViewById(R.id.stepCounterStatus);
@@ -74,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void goContactsActivity(View view) {
         contacts1();
+    }
+
+    public void service1() {
+        serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
+        startService(serviceIntent); // starts the service
+    }
+
+    public void startService(View view) {
+        service1();
     }
 
     //Methods for right button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image

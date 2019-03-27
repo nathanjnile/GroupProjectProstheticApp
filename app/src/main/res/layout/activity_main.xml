@@ -126,6 +126,7 @@
         android:layout_marginStart="@dimen/button_spacing"
         android:layout_marginTop="@dimen/top_button_spacing"
         android:background="@drawable/rounded_corner_buttons"
+        android:onClick="startService"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/infoButton"
         app:layout_constraintTop_toTopOf="parent"
