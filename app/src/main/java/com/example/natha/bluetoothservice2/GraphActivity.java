@@ -93,12 +93,12 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.invalidate();
         lineDataSet1.setCubicIntensity(0.2f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
-        lineDataSet1.setColor(Color.YELLOW);
-        lineDataSet1.setCircleColor(Color.YELLOW);
+        lineDataSet1.setColor(Color.rgb(8,120,196));
+        lineDataSet1.setCircleColor(Color.rgb(8,120,196));
         lineDataSet1.setLineWidth(2f);
         lineDataSet1.setFillAlpha(65);
         lineDataSet1.setFillColor(ColorTemplate.getHoloBlue());
-        lineDataSet1.setCircleHoleColor(Color.YELLOW);
+        lineDataSet1.setCircleHoleColor(Color.rgb(8,120,196));
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
         lineDataSet1.setCircleRadius(1f);
@@ -165,4 +165,15 @@ public class GraphActivity extends AppCompatActivity {
             return true;
         }
     }*/
+
+    public void main1() {
+        /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
+        startActivity(myintent7); // start activity , switch to graph1*/
+        finish();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
+    }
+
+    public void goMainActivity(View view) {
+        main1();
+    }
 }

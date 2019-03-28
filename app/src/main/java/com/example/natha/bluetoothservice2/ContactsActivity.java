@@ -38,4 +38,15 @@ public class ContactsActivity extends AppCompatActivity {
         });
 
     }
+
+    public void main1() {
+        /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
+        startActivity(myintent7); // start activity , switch to graph1*/
+        finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
+    }
+
+    public void goMainActivity(View view) {
+        main1();
+    }
 }

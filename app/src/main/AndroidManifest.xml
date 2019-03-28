@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
     <uses-permission android:name="android.permission.DIAL_PHONE" />
 
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -30,7 +29,8 @@
 
         <activity android:name=".GraphActivity" />
         <activity android:name=".ControlActivity" />
-        <activity android:name=".ContactsActivity"></activity>
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".MainGraphActivity"></activity>
     </application>
 
 </manifest>

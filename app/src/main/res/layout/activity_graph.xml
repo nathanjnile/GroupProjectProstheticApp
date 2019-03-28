@@ -32,16 +32,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="60dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="122dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="@string/EMG_Signal"
         android:textColor="@android:color/background_light"
-        android:textSize="35sp" />
+        android:textSize="20sp" />
 
    <!-- <RelativeLayout
         android:background="@color/colorPrimary"
@@ -75,10 +75,13 @@
         android:layout_height="203dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="14dp"
         android:layout_marginTop="113dp"
+        android:layout_marginEnd="159dp"
         android:rotation="-90"
         android:text="@string/EMG_Signal_axis"
+        android:textAlignment="viewStart"
         android:textColor="@android:color/background_light" />
 
     <TextView
@@ -90,5 +93,22 @@
         android:layout_marginBottom="12dp"
         android:text="@string/seconds_axis"
         android:textColor="@android:color/background_light" />
+
+    <ImageButton
+        android:id="@+id/homebuttongraph"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rounded_corner_home_button"
+        android:onClick="goMainActivity"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/homebutton" />
 
 </RelativeLayout>
