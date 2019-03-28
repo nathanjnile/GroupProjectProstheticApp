@@ -141,7 +141,7 @@ public class PrinterService extends Service {
         mConnectThread = new ConnectThread(device);
         mConnectThread.start();
         setState(STATE_CONNECTING);
-        Log.i(TAG, "Connecting in connectToDevice");
+        Log.i(TAG, "Trying to connect in connectToDevice");
     }
 
     private void setState(int state) {
@@ -362,6 +362,7 @@ public class PrinterService extends Service {
             } catch (IOException e) {
                 Log.e("PrinterService", "close() of connect socket failed", e);
             }
+            sendFailed();
         }
 
     }
