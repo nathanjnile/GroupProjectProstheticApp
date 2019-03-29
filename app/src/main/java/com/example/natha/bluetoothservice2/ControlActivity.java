@@ -21,6 +21,7 @@ public class ControlActivity extends AppCompatActivity {
     ImageButton maxbutton;
     ImageButton minbutton;
     ImageButton homebuttoncontrol;
+    ImageButton resetbutton;
     int angle;
     PrinterService mPrinterService;
 
@@ -36,6 +37,7 @@ public class ControlActivity extends AppCompatActivity {
         maxbutton = (ImageButton) findViewById(R.id.maxbutton);
         minbutton = (ImageButton) findViewById(R.id.minbutton);
         homebuttoncontrol = (ImageButton) findViewById(R.id.homebuttoncontrol);
+        resetbutton = (ImageButton) findViewById(R.id.resetbutton);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,20 @@ public class ControlActivity extends AppCompatActivity {
                 byte[] bytes = "dorsiflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
+                upbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        upbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
             }
         });
 
@@ -54,6 +70,20 @@ public class ControlActivity extends AppCompatActivity {
                 byte[] bytes = "plantarflex".getBytes();
                 mPrinterService.write(bytes);
                 controlfoot.setRotation(angle);
+                downbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        downbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
             }
         });
 
@@ -62,6 +92,20 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
                 mPrinterService.write(bytes);
+                lockbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        lockbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
             }
         });
 
@@ -70,6 +114,20 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "maxdorsiflex".getBytes();
                 mPrinterService.write(bytes);
+                maxbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        maxbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
             }
         });
 
@@ -78,6 +136,42 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "maxplantarflex".getBytes();
                 mPrinterService.write(bytes);
+                minbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        minbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
+            }
+        });
+
+        resetbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "resetposition".getBytes();
+                mPrinterService.write(bytes);
+                resetbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        resetbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
             }
         });
 

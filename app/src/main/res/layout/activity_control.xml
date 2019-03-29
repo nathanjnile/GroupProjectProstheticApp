@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/controlfootimage"
-        android:layout_width="230dp"
-        android:layout_height="90dp"
+        android:layout_width="155dp"
+        android:layout_height="47dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="28dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:rotation="0"
@@ -21,7 +21,7 @@
         android:transformPivotY="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/footcover" />
 
@@ -282,10 +282,44 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="Current Status:"
-        android:textColor="@color/White"
 
+        android:textColor="@color/White"
         app:layout_constraintBottom_toTopOf="@+id/controlfootimage"
-        app:layout_constraintStart_toStartOf="@+id/lockangleText" />
+        app:layout_constraintStart_toStartOf="@+id/resetText" />
+
+    <TextView
+        android:id="@+id/resetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Reset Position"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/lockangleText"
+        app:layout_constraintTop_toBottomOf="@+id/lockangleText" />
+
+    <ImageButton
+        android:id="@+id/resetbutton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_corner_home_button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/resetText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resetText"
+        app:srcCompat="@drawable/resetbutton" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/resetbutton"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/resetbutton"
+        app:srcCompat="@drawable/footcover" />
 
 
 </android.support.constraint.ConstraintLayout>

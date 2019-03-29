@@ -146,6 +146,11 @@ public class GraphActivity extends AppCompatActivity {
             entries.add(new Entry(foo2, foo1));
             graphCreate();
         }
+
+        /*if (entries.size()> 20) {
+            entries.remove(0);
+        }*/
+
         Log.i("entriesarray", "" +entries);
     }
 
