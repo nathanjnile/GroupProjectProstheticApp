@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -36,6 +38,8 @@ public class GraphActivity extends AppCompatActivity {
     float foo1;
     float foo2;
 
+    ImageButton homebuttongraph;
+
     //private GestureDetectorCompat gestureObject;
 
     @Override
@@ -49,6 +53,8 @@ public class GraphActivity extends AppCompatActivity {
         //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+        homebuttongraph= (ImageButton) findViewById(R.id.homebuttongraph);
+
     }
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -168,6 +174,20 @@ public class GraphActivity extends AppCompatActivity {
     }*/
 
     public void main1() {
+        homebuttongraph.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                homebuttongraph.setColorFilter(Color.WHITE);
+            }
+        }.start();
         /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
         startActivity(myintent7); // start activity , switch to graph1*/
         finish();

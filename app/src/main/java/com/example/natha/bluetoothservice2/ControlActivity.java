@@ -1,7 +1,9 @@
 package com.example.natha.bluetoothservice2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -18,6 +20,7 @@ public class ControlActivity extends AppCompatActivity {
     ImageButton lockbutton;
     ImageButton maxbutton;
     ImageButton minbutton;
+    ImageButton homebuttoncontrol;
     int angle;
     PrinterService mPrinterService;
 
@@ -32,6 +35,7 @@ public class ControlActivity extends AppCompatActivity {
         lockbutton = (ImageButton) findViewById(R.id.lockbutton);
         maxbutton = (ImageButton) findViewById(R.id.maxbutton);
         minbutton = (ImageButton) findViewById(R.id.minbutton);
+        homebuttoncontrol = (ImageButton) findViewById(R.id.homebuttoncontrol);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,20 @@ public class ControlActivity extends AppCompatActivity {
     }
 
     public void main1() {
+        homebuttoncontrol.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                homebuttoncontrol.setColorFilter(Color.WHITE);
+            }
+        }.start();
         /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
         startActivity(myintent7); // start activity , switch to graph1*/
         finish();
