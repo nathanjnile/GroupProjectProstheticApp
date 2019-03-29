@@ -94,14 +94,15 @@ public class GraphActivity extends AppCompatActivity {
         lineDataSet1.setCubicIntensity(0.2f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet1.setColor(Color.rgb(8,120,196));
-        lineDataSet1.setCircleColor(Color.rgb(8,120,196));
+        lineDataSet1.setDrawCircles(false);
+        //lineDataSet1.setCircleColor(Color.rgb(8,120,196));
         lineDataSet1.setLineWidth(2f);
         lineDataSet1.setFillAlpha(65);
         lineDataSet1.setFillColor(ColorTemplate.getHoloBlue());
-        lineDataSet1.setCircleHoleColor(Color.rgb(8,120,196));
+        //lineDataSet1.setCircleHoleColor(Color.rgb(8,120,196));
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
-        lineDataSet1.setCircleRadius(1f);
+        //lineDataSet1.setCircleRadius(1f);
         lineDataSet1.setValueTextSize(5f);
         lineDataSet1.setDrawValues(false);
         lineDataSet1.setLabel("");
