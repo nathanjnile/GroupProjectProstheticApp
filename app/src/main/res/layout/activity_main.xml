@@ -128,12 +128,12 @@
         android:background="@drawable/rounded_corner_buttons"
         android:onClick="startService"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/infoButton"
+        app:layout_constraintStart_toEndOf="@+id/contactsButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bluetoothsymbol" />
 
     <ImageButton
-        android:id="@+id/infoButton"
+        android:id="@+id/contactsButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/button_spacing"
@@ -168,9 +168,9 @@
         android:background="@drawable/rounded_corner_buttons"
         android:onClick="goControlActivity"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/infoButton"
+        app:layout_constraintBottom_toBottomOf="@+id/contactsButton"
         app:layout_constraintStart_toEndOf="@+id/graphButton"
-        app:layout_constraintTop_toTopOf="@+id/infoButton"
+        app:layout_constraintTop_toTopOf="@+id/contactsButton"
         app:srcCompat="@drawable/controlsymbol" />
 
     <TextView

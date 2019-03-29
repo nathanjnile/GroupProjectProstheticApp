@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     TextView incomingMessages;
     TextView inclineTextView;
     TextView bluetoothText;
+    ImageButton controlButton;
+    ImageButton bluetoothButton;
+    ImageButton contactsButton;
+    ImageButton graphButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +54,27 @@ public class MainActivity extends AppCompatActivity {
         incomingMessages = (TextView) findViewById(R.id.stepCounterStatus);
         inclineTextView = (TextView) findViewById(R.id.angleTextStatus);
         bluetoothText = (TextView) findViewById(R.id.bluetoothTextStatus);
+        controlButton = (ImageButton) findViewById(R.id.controlButton);
+        bluetoothButton = (ImageButton) findViewById(R.id.bluetoothButton);
+        contactsButton = (ImageButton) findViewById(R.id.contactsButton);
+        graphButton = (ImageButton) findViewById(R.id.graphButton);
     }
 
     public void graph1() {
+        graphButton.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                graphButton.setColorFilter(Color.WHITE);
+            }
+        }.start();
         Intent myintent5 = new Intent(this, GraphActivity.class); // new intent of analytics activity
         startActivity(myintent5); // start activity , switch to graph1
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
@@ -61,6 +85,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToControl() {
+        controlButton.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                controlButton.setColorFilter(Color.WHITE);
+            }
+        }.start();
         Intent myintent6 = new Intent(this, ControlActivity.class); // new intent of analytics activity
         startActivity(myintent6); // start activity , switch to control activity
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
@@ -71,6 +109,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void contacts1() {
+        contactsButton.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                contactsButton.setColorFilter(Color.WHITE);
+            }
+        }.start();
         Intent myintent7 = new Intent(this, ContactsActivity.class); // new intent of analytics activity
         startActivity(myintent7); // start activity , switch to graph1
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
@@ -81,6 +133,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void service1() {
+        bluetoothButton.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                bluetoothButton.setColorFilter(Color.WHITE);
+            }
+        }.start();
         serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
         startService(serviceIntent); // starts the service
     }

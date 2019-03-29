@@ -16,7 +16,6 @@ public class ControlActivity extends AppCompatActivity {
     ImageButton upbutton;
     ImageButton downbutton;
     ImageButton lockbutton;
-    ImageButton unlockbutton;
     ImageButton maxbutton;
     ImageButton minbutton;
     int angle;
