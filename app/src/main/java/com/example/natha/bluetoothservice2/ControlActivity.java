@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ControlActivity extends AppCompatActivity {
 
-    ImageView controlfoot;
+    //ImageView controlfoot;
     ImageButton upbutton;
     ImageButton downbutton;
     ImageButton lockbutton;
@@ -22,7 +23,9 @@ public class ControlActivity extends AppCompatActivity {
     ImageButton minbutton;
     ImageButton homebuttoncontrol;
     ImageButton resetbutton;
-    int angle;
+    ImageButton recalibratebutton;
+    TextView previousactiontext;
+    //int angle;
     PrinterService mPrinterService;
 
     @Override
@@ -30,7 +33,7 @@ public class ControlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
 
-        controlfoot = (ImageView) findViewById(R.id.controlfootimage);
+        //controlfoot = (ImageView) findViewById(R.id.controlfootimage);
         upbutton = (ImageButton) findViewById(R.id.moveupbutton);
         downbutton = (ImageButton) findViewById(R.id.movedownbutton);
         lockbutton = (ImageButton) findViewById(R.id.lockbutton);
@@ -38,14 +41,17 @@ public class ControlActivity extends AppCompatActivity {
         minbutton = (ImageButton) findViewById(R.id.minbutton);
         homebuttoncontrol = (ImageButton) findViewById(R.id.homebuttoncontrol);
         resetbutton = (ImageButton) findViewById(R.id.resetbutton);
+        recalibratebutton = (ImageButton) findViewById(R.id.recalibratebutton);
+        previousactiontext = (TextView) findViewById(R.id.previousactiontext);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                angle = angle - 2;
+                //angle = angle - 2;
                 byte[] bytes = "dorsiflex".getBytes();
                 mPrinterService.write(bytes);
-                controlfoot.setRotation(angle);
+                //controlfoot.setRotation(angle);
+                previousactiontext.setText("Move Up");
                 upbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -66,10 +72,11 @@ public class ControlActivity extends AppCompatActivity {
         downbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                angle = angle + 2;
+                //angle = angle + 2;
                 byte[] bytes = "plantarflex".getBytes();
                 mPrinterService.write(bytes);
-                controlfoot.setRotation(angle);
+                //controlfoot.setRotation(angle);
+                previousactiontext.setText("Move Down");
                 downbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -92,6 +99,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
                 mPrinterService.write(bytes);
+                previousactiontext.setText("Lock");
                 lockbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -114,6 +122,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "maxdorsiflex".getBytes();
                 mPrinterService.write(bytes);
+                previousactiontext.setText("Maximum Angle");
                 maxbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -136,6 +145,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "maxplantarflex".getBytes();
                 mPrinterService.write(bytes);
+                previousactiontext.setText("Minimum Angle");
                 minbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -158,6 +168,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "resetposition".getBytes();
                 mPrinterService.write(bytes);
+                previousactiontext.setText("Reset Position");
                 resetbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
@@ -170,6 +181,29 @@ public class ControlActivity extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         resetbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
+            }
+        });
+
+        recalibratebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "recalibrate".getBytes();
+                mPrinterService.write(bytes);
+                previousactiontext.setText("Re-Calibrate");
+                recalibratebutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        recalibratebutton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }

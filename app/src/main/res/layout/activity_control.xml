@@ -7,24 +7,6 @@
     android:background="@color/Grey"
     tools:context=".ControlActivity">
 
-    <ImageView
-        android:id="@+id/controlfootimage"
-        android:layout_width="155dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        android:rotation="0"
-        android:transformPivotX="40dp"
-        android:transformPivotY="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/footcover" />
-
     <ImageButton
         android:id="@+id/moveupbutton"
         android:layout_width="40dp"
@@ -37,7 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/moveupText"
-        app:layout_constraintVertical_bias="0.285"
         app:srcCompat="@drawable/upmovebutton" />
 
     <ImageButton
@@ -139,7 +120,7 @@
         android:id="@+id/moveupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:text="Move Up"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/homebuttoncontrol"
@@ -277,17 +258,6 @@
         app:srcCompat="@drawable/lockbutton" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Current Status:"
-
-        android:textColor="@color/White"
-        app:layout_constraintBottom_toTopOf="@+id/controlfootimage"
-        app:layout_constraintStart_toStartOf="@+id/resetText" />
-
-    <TextView
         android:id="@+id/resetText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -320,6 +290,61 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/resetbutton"
         app:srcCompat="@drawable/footcover" />
+
+    <TextView
+        android:id="@+id/recalibrateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Re-Calibrate"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/resetText"
+        app:layout_constraintTop_toBottomOf="@+id/resetText" />
+
+    <ImageButton
+        android:id="@+id/recalibratebutton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_corner_home_button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/recalibrateText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recalibrateText"
+        app:srcCompat="@drawable/recalibratebutton" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recalibratebutton"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/recalibratebutton"
+        app:srcCompat="@drawable/footcover" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Previous Action:"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/homebuttoncontrol"
+        app:layout_constraintTop_toBottomOf="@+id/homebuttoncontrol" />
+
+    <TextView
+        android:id="@+id/previousactiontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="N/A"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/homebuttoncontrol" />
 
 
 </android.support.constraint.ConstraintLayout>
