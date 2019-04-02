@@ -18,7 +18,7 @@ import static android.Manifest.permission.CALL_PHONE;
 
 public class ContactsActivity extends AppCompatActivity {
 
-    private Button button;
+    private ImageButton callbutton;
     ImageButton contactshomebutton;
 
     @Override
@@ -26,11 +26,11 @@ public class ContactsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
 
-        button = (Button) findViewById(R.id.buttonCall);
+        callbutton = (ImageButton) findViewById(R.id.callbutton);
         contactshomebutton = (ImageButton) findViewById(R.id.contactshomebutton);
 
         // add button listener
-        button.setOnClickListener(new View.OnClickListener() {
+        callbutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
