@@ -243,11 +243,6 @@ public class MainActivity extends AppCompatActivity {
 
             incomingMessages.setText(text3);
             Log.i("onReceive: ", "" +stepsValue);
-            /*if (stepsValue % 2 == 0) {
-                incomingMessages.setBackgroundColor(Color.YELLOW);
-            }   else {
-                incomingMessages.setBackgroundColor(Color.GREEN);
-            }*/
 
             String inclineStatus = values2[5];
 
@@ -272,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NumberFormatException e)
             {
+                //h
             }
 
             if (speedValueFloat == 0) {

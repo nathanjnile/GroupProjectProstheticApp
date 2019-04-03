@@ -61,7 +61,7 @@
 
     <TextView
         android:id="@+id/bluetoothTextStatus"
-        android:layout_width="95dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
@@ -73,7 +73,7 @@
 
     <TextView
         android:id="@+id/stepCounterStatus"
-        android:layout_width="95dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
@@ -85,7 +85,7 @@
 
     <TextView
         android:id="@+id/speedTextStatus"
-        android:layout_width="95dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
@@ -97,7 +97,7 @@
 
     <TextView
         android:id="@+id/controlTextStatus"
-        android:layout_width="95dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
@@ -109,7 +109,7 @@
 
     <TextView
         android:id="@+id/angleTextStatus"
-        android:layout_width="95dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
