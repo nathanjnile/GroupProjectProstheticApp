@@ -84,16 +84,16 @@
         app:layout_constraintTop_toTopOf="@+id/stepCounterText" />
 
     <TextView
-        android:id="@+id/powerTextStatus"
+        android:id="@+id/speedTextStatus"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corner_text"
         android:gravity="center"
-        android:text="High Power"
+        android:text="Null"
         android:textColor="@color/White"
-        app:layout_constraintBottom_toBottomOf="@+id/powerText"
+        app:layout_constraintBottom_toBottomOf="@+id/SpeedText"
         app:layout_constraintEnd_toEndOf="@+id/stepCounterStatus"
-        app:layout_constraintTop_toTopOf="@+id/powerText" />
+        app:layout_constraintTop_toTopOf="@+id/SpeedText" />
 
     <TextView
         android:id="@+id/controlTextStatus"
@@ -104,7 +104,7 @@
         android:text="DF Lock"
         android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="@+id/controlText"
-        app:layout_constraintEnd_toEndOf="@+id/powerTextStatus"
+        app:layout_constraintEnd_toEndOf="@+id/speedTextStatus"
         app:layout_constraintTop_toTopOf="@+id/controlText" />
 
     <TextView
@@ -194,11 +194,11 @@
         app:layout_constraintTop_toBottomOf="@+id/bluetoothText" />
 
     <TextView
-        android:id="@+id/powerText"
+        android:id="@+id/SpeedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_spacing"
-        android:text="Power Status"
+        android:text="Speed Status"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/stepCounterText"
         app:layout_constraintTop_toBottomOf="@+id/stepCounterText" />
@@ -210,8 +210,8 @@
         android:layout_marginTop="@dimen/text_spacing"
         android:text="Control Status"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/powerText"
-        app:layout_constraintTop_toBottomOf="@+id/powerText" />
+        app:layout_constraintStart_toStartOf="@+id/SpeedText"
+        app:layout_constraintTop_toBottomOf="@+id/SpeedText" />
 
     <TextView
         android:id="@+id/angleText"

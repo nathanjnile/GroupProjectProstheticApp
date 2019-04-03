@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //private GestureDetectorCompat gestureObject;
     Float stepsValue;
     Float inclineValue;
+    Float speedValueFloat;
     TextView incomingMessages;
     TextView inclineTextView;
     TextView bluetoothText;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bluetoothButton;
     ImageButton contactsButton;
     ImageButton graphButton;
+    TextView speedTextStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         bluetoothButton = (ImageButton) findViewById(R.id.bluetoothButton);
         contactsButton = (ImageButton) findViewById(R.id.contactsButton);
         graphButton = (ImageButton) findViewById(R.id.graphButton);
+        speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
     }
 
     public void graph1() {
@@ -260,6 +263,21 @@ public class MainActivity extends AppCompatActivity {
                 inclineTextView.setText("Flat Ground");
             }   else {
                 inclineTextView.setText("Incline Ground");
+            }
+
+            String speedValueString = values2[7];
+
+            try {
+                speedValueFloat = Float.parseFloat(speedValueString);
+            }
+            catch (NumberFormatException e)
+            {
+            }
+
+            if (speedValueFloat == 0) {
+                speedTextStatus.setText("Low Speed");
+            }   else {
+                    speedTextStatus.setText("High Speed");
             }
         }
     };

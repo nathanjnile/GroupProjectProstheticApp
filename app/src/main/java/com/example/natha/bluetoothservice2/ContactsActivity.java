@@ -39,6 +39,21 @@ public class ContactsActivity extends AppCompatActivity {
                 callIntent.setData(Uri.parse("tel:07534824108"));
                 startActivity(callIntent);
 
+                callbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        callbutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
+
             }
 
         });
