@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton contactsButton;
     ImageButton graphButton;
     TextView speedTextStatus;
+    TextView controlTextStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         contactsButton = (ImageButton) findViewById(R.id.contactsButton);
         graphButton = (ImageButton) findViewById(R.id.graphButton);
         speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
+        controlTextStatus = (TextView) findViewById(R.id.controlTextStatus);
     }
 
     public void graph1() {
