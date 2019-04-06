@@ -161,47 +161,121 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Methods for right button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
-/*    public void ImageChangeButtonRight(View view) {
+    public void ImageChangeButtonRight(View view) {
+        legImage = findViewById(R.id.legImage);
         if (pic == R.drawable.leftfacing) { //if prosthetic is facing left
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.frontfacing));
+            legImage.setImageResource(R.drawable.frontfacing);
             pic = R.drawable.frontfacing;
         } else if (pic == R.drawable.frontfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.rightfacing));
+            legImage.setImageResource(R.drawable.rightfacing);
             pic = R.drawable.rightfacing;
         } else if (pic == R.drawable.rightfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.backfacing));
+            legImage.setImageResource(R.drawable.backfacing);
             pic = R.drawable.backfacing;
         } else if (pic == R.drawable.backfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.leftfacing));
+            legImage.setImageResource(R.drawable.leftfacing);
             pic = R.drawable.leftfacing;
         }
-        //legImage=(ImageView) findViewById(R.id.legImage);
-        //legImage.setImageDrawable(getDrawable(R.drawable.frontfacing));
+    }
+
+    /*public void ImageButtonLeft(View view) {
+        legImage = findViewById(R.id.legImage);
+        if (pic == R.drawable.legImage1) { //if prosthetic is facing left
+            legImage.setImageResource(R.drawable.legImage2);
+            pic = R.drawable.legImage2;
+        } else if (pic == R.drawable.legImage2) {
+            legImage.setImageResource(R.drawable.legImage3);
+            pic = R.drawable.legImage3;
+        } else if (pic == R.drawable.legImage3) {
+            legImage.setImageResource(R.drawable.legImage4);
+            pic = R.drawable.legImage5;
+        } else if (pic == R.drawable.legImage4) {
+            legImage.setImageResource(R.drawable.legImage5);
+            pic = R.drawable.legImage5;
+        } else if (pic == R.drawable.legImage5) {
+            legImage.setImageResource(R.drawable.legImage6);
+            pic = R.drawable.legImage6;
+        } else if (pic == R.drawable.legImage6) {
+            legImage.setImageResource(R.drawable.legImage7);
+            pic = R.drawable.legImage7;
+        } else if (pic == R.drawable.legImage7) {
+            legImage.setImageResource(R.drawable.legImage8);
+            pic = R.drawable.legImage8;
+        } else if (pic == R.drawable.legImage8) {
+            legImage.setImageResource(R.drawable.legImage9);
+            pic = R.drawable.legImage9;
+        } else if (pic == R.drawable.legImage9) {
+            legImage.setImageResource(R.drawable.legImage10);
+            pic = R.drawable.legImage10;
+        } else if (pic == R.drawable.legImage10) {
+            legImage.setImageResource(R.drawable.legImage11);
+            pic = R.drawable.legImage11;
+        } else if (pic == R.drawable.legImage11) {
+            legImage.setImageResource(R.drawable.legImage12);
+            pic = R.drawable.legImage12;
+        } else if (pic == R.drawable.legImage12) {
+            legImage.setImageResource(R.drawable.legImage1);
+            pic = R.drawable.legImage1;
+        }
+    }*/
+
+    /*public void ImageButtonRight(View view) {
+        legImage = findViewById(R.id.legImage);
+        if (pic == R.drawable.legImage1) { //if prosthetic is facing left
+            legImage.setImageResource(R.drawable.legImage12);
+            pic = R.drawable.legImage12;
+        } else if (pic == R.drawable.legImage2) {
+            legImage.setImageResource(R.drawable.legImage1);
+            pic = R.drawable.legImage1;
+        } else if (pic == R.drawable.legImage3) {
+            legImage.setImageResource(R.drawable.legImage2);
+            pic = R.drawable.legImage2;
+        } else if (pic == R.drawable.legImage4) {
+            legImage.setImageResource(R.drawable.legImage3);
+            pic = R.drawable.legImage3;
+        } else if (pic == R.drawable.legImage5) {
+            legImage.setImageResource(R.drawable.legImage4);
+            pic = R.drawable.legImage4;
+        } else if (pic == R.drawable.legImage6) {
+            legImage.setImageResource(R.drawable.legImage5);
+            pic = R.drawable.legImage5;
+        } else if (pic == R.drawable.legImage7) {
+            legImage.setImageResource(R.drawable.legImage6);
+            pic = R.drawable.legImage6;
+        } else if (pic == R.drawable.legImage8) {
+            legImage.setImageResource(R.drawable.legImage7);
+            pic = R.drawable.legImage7;
+        } else if (pic == R.drawable.legImage9) {
+            legImage.setImageResource(R.drawable.legImage8);
+            pic = R.drawable.legImage8;
+        } else if (pic == R.drawable.legImage10) {
+            legImage.setImageResource(R.drawable.legImage9);
+            pic = R.drawable.legImage9;
+        } else if (pic == R.drawable.legImage11) {
+            legImage.setImageResource(R.drawable.legImage10);
+            pic = R.drawable.legImage10;
+        } else if (pic == R.drawable.legImage12) {
+            legImage.setImageResource(R.drawable.legImage111);
+            pic = R.drawable.legImage11;
+        }
     }*/
     //Methods for left button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
- /*   public void ImageChangeButtonLeft(View view) {
+    public void ImageChangeButtonLeft(View view) {
+        legImage = findViewById(R.id.legImage);
         if (pic == R.drawable.leftfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.backfacing));
+            legImage.setImageResource(R.drawable.backfacing);
             pic = R.drawable.backfacing;
         } else if (pic == R.drawable.backfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.rightfacing));
+            legImage.setImageResource(R.drawable.rightfacing);
             pic = R.drawable.rightfacing;
         } else if (pic == R.drawable.rightfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.frontfacing));
+            legImage.setImageResource(R.drawable.frontfacing);
             pic = R.drawable.frontfacing;
         } else if (pic == R.drawable.frontfacing) {
-            legImage = (ImageView) findViewById(R.id.legImage);
-            legImage.setImageDrawable(getDrawable(R.drawable.leftfacing));
+            legImage.setImageResource(R.drawable.leftfacing);
             pic = R.drawable.leftfacing;
         }
-    }*/
+    }
 
    /* // Method to capture motion events for swiping between activities
     @Override
