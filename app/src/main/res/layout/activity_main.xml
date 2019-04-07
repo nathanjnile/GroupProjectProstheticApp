@@ -9,42 +9,51 @@
 
     <ImageView
         android:id="@+id/legImage"
-        android:layout_width="117dp"
-        android:layout_height="211dp"
+        android:layout_width="149dp"
+        android:layout_height="210dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.929"
-        app:srcCompat="@drawable/leftfacing" />
+        app:srcCompat="@drawable/legImage1" />
 
 
-    <Button
+    <ImageButton
 
         android:id="@+id/btnClickRight"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_corner_buttons"
         android:drawableTop="@drawable/ic_keyboard_arrow_right_black_24dp"
         android:onClick="ImageChangeButtonRight"
+        android:rotation="90"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/legImage"
         app:layout_constraintStart_toEndOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="@+id/legImage" />
+        app:layout_constraintTop_toTopOf="@+id/legImage"
+        app:srcCompat="@drawable/upmovebutton" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnClickLeft"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_corner_buttons"
         android:drawableTop="@drawable/ic_keyboard_arrow_left_black_24dp"
         android:onClick="ImageChangeButtonLeft"
+        android:rotation="-90"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/legImage"
         app:layout_constraintEnd_toStartOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="@+id/legImage" />
+        app:layout_constraintTop_toTopOf="@+id/legImage"
+        app:srcCompat="@drawable/upmovebutton" />
 
     <TextView
         android:id="@+id/bluetoothTextStatus"
