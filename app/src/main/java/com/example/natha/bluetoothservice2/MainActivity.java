@@ -7,27 +7,20 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Printer;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.nio.charset.Charset;
 
 public class MainActivity extends AppCompatActivity {
 
     private Intent serviceIntent;
     private static final String TAG = "OutputStream";
     ImageView legImage;
-    int pic = R.drawable.leftfacing; //set initial image as left facing prosthetic
+    int pic = R.drawable.legimage11; //set initial image as left facing prosthetic
     // Gesture object to change activity when swiping
     //private GestureDetectorCompat gestureObject;
     Float stepsValue;
@@ -178,87 +171,87 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*public void ImageButtonLeft(View view) {
+    public void ImageButtonRight(View view) {
         legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.legImage1) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.legImage2);
-            pic = R.drawable.legImage2;
-        } else if (pic == R.drawable.legImage2) {
-            legImage.setImageResource(R.drawable.legImage3);
-            pic = R.drawable.legImage3;
-        } else if (pic == R.drawable.legImage3) {
-            legImage.setImageResource(R.drawable.legImage4);
-            pic = R.drawable.legImage5;
-        } else if (pic == R.drawable.legImage4) {
-            legImage.setImageResource(R.drawable.legImage5);
-            pic = R.drawable.legImage5;
-        } else if (pic == R.drawable.legImage5) {
-            legImage.setImageResource(R.drawable.legImage6);
-            pic = R.drawable.legImage6;
-        } else if (pic == R.drawable.legImage6) {
-            legImage.setImageResource(R.drawable.legImage7);
-            pic = R.drawable.legImage7;
-        } else if (pic == R.drawable.legImage7) {
-            legImage.setImageResource(R.drawable.legImage8);
-            pic = R.drawable.legImage8;
-        } else if (pic == R.drawable.legImage8) {
-            legImage.setImageResource(R.drawable.legImage9);
-            pic = R.drawable.legImage9;
-        } else if (pic == R.drawable.legImage9) {
-            legImage.setImageResource(R.drawable.legImage10);
-            pic = R.drawable.legImage10;
-        } else if (pic == R.drawable.legImage10) {
-            legImage.setImageResource(R.drawable.legImage11);
-            pic = R.drawable.legImage11;
-        } else if (pic == R.drawable.legImage11) {
-            legImage.setImageResource(R.drawable.legImage12);
-            pic = R.drawable.legImage12;
-        } else if (pic == R.drawable.legImage12) {
-            legImage.setImageResource(R.drawable.legImage1);
-            pic = R.drawable.legImage1;
+        if (pic == R.drawable.legimage1) { //if prosthetic is facing left
+            legImage.setImageResource(R.drawable.legimage2);
+            pic = R.drawable.legimage2;
+        } else if (pic == R.drawable.legimage2) {
+            legImage.setImageResource(R.drawable.legimage3);
+            pic = R.drawable.legimage3;
+        } else if (pic == R.drawable.legimage3) {
+            legImage.setImageResource(R.drawable.legimage4);
+            pic = R.drawable.legimage5;
+        } else if (pic == R.drawable.legimage4) {
+            legImage.setImageResource(R.drawable.legimage5);
+            pic = R.drawable.legimage5;
+        } else if (pic == R.drawable.legimage5) {
+            legImage.setImageResource(R.drawable.legimage6);
+            pic = R.drawable.legimage6;
+        } else if (pic == R.drawable.legimage6) {
+            legImage.setImageResource(R.drawable.legimage7);
+            pic = R.drawable.legimage7;
+        } else if (pic == R.drawable.legimage7) {
+            legImage.setImageResource(R.drawable.legimage8);
+            pic = R.drawable.legimage8;
+        } else if (pic == R.drawable.legimage8) {
+            legImage.setImageResource(R.drawable.legimage9);
+            pic = R.drawable.legimage9;
+        } else if (pic == R.drawable.legimage9) {
+            legImage.setImageResource(R.drawable.legimage10);
+            pic = R.drawable.legimage10;
+        } else if (pic == R.drawable.legimage10) {
+            legImage.setImageResource(R.drawable.legimage11);
+            pic = R.drawable.legimage11;
+        } else if (pic == R.drawable.legimage11) {
+            legImage.setImageResource(R.drawable.legimage12);
+            pic = R.drawable.legimage12;
+        } else if (pic == R.drawable.legimage12) {
+            legImage.setImageResource(R.drawable.legimage1);
+            pic = R.drawable.legimage1;
         }
-    }*/
+    }
 
-    /*public void ImageButtonRight(View view) {
+    public void ImageButtonLeft(View view) {
         legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.legImage1) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.legImage12);
-            pic = R.drawable.legImage12;
-        } else if (pic == R.drawable.legImage2) {
-            legImage.setImageResource(R.drawable.legImage1);
-            pic = R.drawable.legImage1;
-        } else if (pic == R.drawable.legImage3) {
-            legImage.setImageResource(R.drawable.legImage2);
-            pic = R.drawable.legImage2;
-        } else if (pic == R.drawable.legImage4) {
-            legImage.setImageResource(R.drawable.legImage3);
-            pic = R.drawable.legImage3;
-        } else if (pic == R.drawable.legImage5) {
-            legImage.setImageResource(R.drawable.legImage4);
-            pic = R.drawable.legImage4;
-        } else if (pic == R.drawable.legImage6) {
-            legImage.setImageResource(R.drawable.legImage5);
-            pic = R.drawable.legImage5;
-        } else if (pic == R.drawable.legImage7) {
-            legImage.setImageResource(R.drawable.legImage6);
-            pic = R.drawable.legImage6;
-        } else if (pic == R.drawable.legImage8) {
-            legImage.setImageResource(R.drawable.legImage7);
-            pic = R.drawable.legImage7;
-        } else if (pic == R.drawable.legImage9) {
-            legImage.setImageResource(R.drawable.legImage8);
-            pic = R.drawable.legImage8;
-        } else if (pic == R.drawable.legImage10) {
-            legImage.setImageResource(R.drawable.legImage9);
-            pic = R.drawable.legImage9;
-        } else if (pic == R.drawable.legImage11) {
-            legImage.setImageResource(R.drawable.legImage10);
-            pic = R.drawable.legImage10;
-        } else if (pic == R.drawable.legImage12) {
-            legImage.setImageResource(R.drawable.legImage111);
-            pic = R.drawable.legImage11;
+        if (pic == R.drawable.legimage1) { //if prosthetic is facing left
+            legImage.setImageResource(R.drawable.legimage12);
+            pic = R.drawable.legimage12;
+        } else if (pic == R.drawable.legimage2) {
+            legImage.setImageResource(R.drawable.legimage1);
+            pic = R.drawable.legimage1;
+        } else if (pic == R.drawable.legimage3) {
+            legImage.setImageResource(R.drawable.legimage2);
+            pic = R.drawable.legimage2;
+        } else if (pic == R.drawable.legimage4) {
+            legImage.setImageResource(R.drawable.legimage3);
+            pic = R.drawable.legimage3;
+        } else if (pic == R.drawable.legimage5) {
+            legImage.setImageResource(R.drawable.legimage4);
+            pic = R.drawable.legimage4;
+        } else if (pic == R.drawable.legimage6) {
+            legImage.setImageResource(R.drawable.legimage5);
+            pic = R.drawable.legimage5;
+        } else if (pic == R.drawable.legimage7) {
+            legImage.setImageResource(R.drawable.legimage6);
+            pic = R.drawable.legimage6;
+        } else if (pic == R.drawable.legimage8) {
+            legImage.setImageResource(R.drawable.legimage7);
+            pic = R.drawable.legimage7;
+        } else if (pic == R.drawable.legimage9) {
+            legImage.setImageResource(R.drawable.legimage8);
+            pic = R.drawable.legimage8;
+        } else if (pic == R.drawable.legimage10) {
+            legImage.setImageResource(R.drawable.legimage9);
+            pic = R.drawable.legimage9;
+        } else if (pic == R.drawable.legimage11) {
+            legImage.setImageResource(R.drawable.legimage10);
+            pic = R.drawable.legimage10;
+        } else if (pic == R.drawable.legimage12) {
+            legImage.setImageResource(R.drawable.legimage11);
+            pic = R.drawable.legimage11;
         }
-    }*/
+    }
     //Methods for left button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
     public void ImageChangeButtonLeft(View view) {
         legImage = findViewById(R.id.legImage);
