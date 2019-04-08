@@ -112,6 +112,7 @@
         android:layout_width="21dp"
         android:layout_height="13dp"
         android:layout_marginStart="51dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/controltitle"
         app:layout_constraintTop_toTopOf="@+id/homebuttoncontrol"
         app:srcCompat="@drawable/battery" />

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.CountDownTimer;
+import android.provider.ContactsContract;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bluetoothButton;
     ImageButton contactsButton;
     ImageButton graphButton;
+    ImageButton btnClickLeft;
+    ImageButton btnClickRight;
     TextView speedTextStatus;
     TextView controlTextStatus;
 
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         bluetoothButton = (ImageButton) findViewById(R.id.bluetoothButton);
         contactsButton = (ImageButton) findViewById(R.id.contactsButton);
         graphButton = (ImageButton) findViewById(R.id.graphButton);
+        btnClickLeft = (ImageButton) findViewById(R.id.btnClickLeft);
+        btnClickRight = (ImageButton) findViewById(R.id.btnClickRight);
         speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
         controlTextStatus = (TextView) findViewById(R.id.controlTextStatus);
     }
@@ -172,6 +177,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ImageButtonRight(View view) {
+        btnClickRight.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                btnClickRight.setColorFilter(Color.WHITE);
+            }
+        }.start();
         legImage = findViewById(R.id.legImage);
         if (pic == R.drawable.legimage1) { //if prosthetic is facing left
             legImage.setImageResource(R.drawable.legimage2);
@@ -181,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             pic = R.drawable.legimage3;
         } else if (pic == R.drawable.legimage3) {
             legImage.setImageResource(R.drawable.legimage4);
-            pic = R.drawable.legimage5;
+            pic = R.drawable.legimage4;
         } else if (pic == R.drawable.legimage4) {
             legImage.setImageResource(R.drawable.legimage5);
             pic = R.drawable.legimage5;
@@ -213,6 +232,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ImageButtonLeft(View view) {
+        btnClickLeft.setColorFilter(Color.BLACK);
+        new CountDownTimer(100, 50) {
+
+            @Override
+            public void onTick(long arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinish() {
+                btnClickLeft.setColorFilter(Color.WHITE);
+            }
+        }.start();
         legImage = findViewById(R.id.legImage);
         if (pic == R.drawable.legimage1) { //if prosthetic is facing left
             legImage.setImageResource(R.drawable.legimage12);
