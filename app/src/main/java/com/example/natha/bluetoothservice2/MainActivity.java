@@ -178,6 +178,44 @@ public class MainActivity extends AppCompatActivity {
 
     public void ImageButtonRight(View view) {
         btnClickRight.setColorFilter(Color.BLACK);
+        legImage = findViewById(R.id.legImage);
+        if (pic == R.drawable.legimage1) {
+            legImage.setImageResource(R.drawable.legimage2);
+            pic = R.drawable.legimage2;
+        } else if (pic == R.drawable.legimage2) {
+            legImage.setImageResource(R.drawable.legimage3);
+            pic = R.drawable.legimage3;
+        } else if (pic == R.drawable.legimage3) {
+            legImage.setImageResource(R.drawable.legimage4);
+            pic = R.drawable.legimage4;
+        } else if (pic == R.drawable.legimage4) {
+            legImage.setImageResource(R.drawable.legimage5);
+            pic = R.drawable.legimage5;
+        } else if (pic == R.drawable.legimage5) {
+            legImage.setImageResource(R.drawable.legimage6);
+            pic = R.drawable.legimage6;
+        } else if (pic == R.drawable.legimage6) {
+            legImage.setImageResource(R.drawable.legimage7);
+            pic = R.drawable.legimage7;
+        } else if (pic == R.drawable.legimage7) {
+            legImage.setImageResource(R.drawable.legimage8);
+            pic = R.drawable.legimage8;
+        } else if (pic == R.drawable.legimage8) {
+            legImage.setImageResource(R.drawable.legimage9);
+            pic = R.drawable.legimage9;
+        } else if (pic == R.drawable.legimage9) {
+            legImage.setImageResource(R.drawable.legimage10);
+            pic = R.drawable.legimage10;
+        } else if (pic == R.drawable.legimage10) {
+            legImage.setImageResource(R.drawable.legimage11);
+            pic = R.drawable.legimage11;
+        } else if (pic == R.drawable.legimage11) {
+            legImage.setImageResource(R.drawable.legimage12);
+            pic = R.drawable.legimage12;
+        } else if (pic == R.drawable.legimage12) {
+            legImage.setImageResource(R.drawable.legimage1);
+            pic = R.drawable.legimage1;
+        }
         new CountDownTimer(100, 50) {
 
             @Override
@@ -191,48 +229,48 @@ public class MainActivity extends AppCompatActivity {
                 btnClickRight.setColorFilter(Color.WHITE);
             }
         }.start();
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.legimage1) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.legimage2);
-            pic = R.drawable.legimage2;
-        } else if (pic == R.drawable.legimage2) {
-            legImage.setImageResource(R.drawable.legimage3);
-            pic = R.drawable.legimage3;
-        } else if (pic == R.drawable.legimage3) {
-            legImage.setImageResource(R.drawable.legimage4);
-            pic = R.drawable.legimage4;
-        } else if (pic == R.drawable.legimage4) {
-            legImage.setImageResource(R.drawable.legimage5);
-            pic = R.drawable.legimage5;
-        } else if (pic == R.drawable.legimage5) {
-            legImage.setImageResource(R.drawable.legimage6);
-            pic = R.drawable.legimage6;
-        } else if (pic == R.drawable.legimage6) {
-            legImage.setImageResource(R.drawable.legimage7);
-            pic = R.drawable.legimage7;
-        } else if (pic == R.drawable.legimage7) {
-            legImage.setImageResource(R.drawable.legimage8);
-            pic = R.drawable.legimage8;
-        } else if (pic == R.drawable.legimage8) {
-            legImage.setImageResource(R.drawable.legimage9);
-            pic = R.drawable.legimage9;
-        } else if (pic == R.drawable.legimage9) {
-            legImage.setImageResource(R.drawable.legimage10);
-            pic = R.drawable.legimage10;
-        } else if (pic == R.drawable.legimage10) {
-            legImage.setImageResource(R.drawable.legimage11);
-            pic = R.drawable.legimage11;
-        } else if (pic == R.drawable.legimage11) {
-            legImage.setImageResource(R.drawable.legimage12);
-            pic = R.drawable.legimage12;
-        } else if (pic == R.drawable.legimage12) {
-            legImage.setImageResource(R.drawable.legimage1);
-            pic = R.drawable.legimage1;
-        }
     }
 
     public void ImageButtonLeft(View view) {
         btnClickLeft.setColorFilter(Color.BLACK);
+        legImage = findViewById(R.id.legImage);
+        if (pic == R.drawable.legimage1) { //if prosthetic is facing left
+            legImage.setImageResource(R.drawable.legimage12);
+            pic = R.drawable.legimage12;
+        } else if (pic == R.drawable.legimage2) {
+            legImage.setImageResource(R.drawable.legimage1);
+            pic = R.drawable.legimage1;
+        } else if (pic == R.drawable.legimage3) {
+            legImage.setImageResource(R.drawable.legimage2);
+            pic = R.drawable.legimage2;
+        } else if (pic == R.drawable.legimage4) {
+            legImage.setImageResource(R.drawable.legimage3);
+            pic = R.drawable.legimage3;
+        } else if (pic == R.drawable.legimage5) {
+            legImage.setImageResource(R.drawable.legimage4);
+            pic = R.drawable.legimage4;
+        } else if (pic == R.drawable.legimage6) {
+            legImage.setImageResource(R.drawable.legimage5);
+            pic = R.drawable.legimage5;
+        } else if (pic == R.drawable.legimage7) {
+            legImage.setImageResource(R.drawable.legimage6);
+            pic = R.drawable.legimage6;
+        } else if (pic == R.drawable.legimage8) {
+            legImage.setImageResource(R.drawable.legimage7);
+            pic = R.drawable.legimage7;
+        } else if (pic == R.drawable.legimage9) {
+            legImage.setImageResource(R.drawable.legimage8);
+            pic = R.drawable.legimage8;
+        } else if (pic == R.drawable.legimage10) {
+            legImage.setImageResource(R.drawable.legimage9);
+            pic = R.drawable.legimage9;
+        } else if (pic == R.drawable.legimage11) {
+            legImage.setImageResource(R.drawable.legimage10);
+            pic = R.drawable.legimage10;
+        } else if (pic == R.drawable.legimage12) {
+            legImage.setImageResource(R.drawable.legimage11);
+            pic = R.drawable.legimage11;
+        }
         new CountDownTimer(100, 50) {
 
             @Override
@@ -246,44 +284,6 @@ public class MainActivity extends AppCompatActivity {
                 btnClickLeft.setColorFilter(Color.WHITE);
             }
         }.start();
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.legimage1) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.legimage12);
-            pic = R.drawable.legimage12;
-        } else if (pic == R.drawable.legimage2) {
-            legImage.setImageResource(R.drawable.legimage1);
-            pic = R.drawable.legimage1;
-        } else if (pic == R.drawable.legimage3) {
-            legImage.setImageResource(R.drawable.legimage2);
-            pic = R.drawable.legimage2;
-        } else if (pic == R.drawable.legimage4) {
-            legImage.setImageResource(R.drawable.legimage3);
-            pic = R.drawable.legimage3;
-        } else if (pic == R.drawable.legimage5) {
-            legImage.setImageResource(R.drawable.legimage4);
-            pic = R.drawable.legimage4;
-        } else if (pic == R.drawable.legimage6) {
-            legImage.setImageResource(R.drawable.legimage5);
-            pic = R.drawable.legimage5;
-        } else if (pic == R.drawable.legimage7) {
-            legImage.setImageResource(R.drawable.legimage6);
-            pic = R.drawable.legimage6;
-        } else if (pic == R.drawable.legimage8) {
-            legImage.setImageResource(R.drawable.legimage7);
-            pic = R.drawable.legimage7;
-        } else if (pic == R.drawable.legimage9) {
-            legImage.setImageResource(R.drawable.legimage8);
-            pic = R.drawable.legimage8;
-        } else if (pic == R.drawable.legimage10) {
-            legImage.setImageResource(R.drawable.legimage9);
-            pic = R.drawable.legimage9;
-        } else if (pic == R.drawable.legimage11) {
-            legImage.setImageResource(R.drawable.legimage10);
-            pic = R.drawable.legimage10;
-        } else if (pic == R.drawable.legimage12) {
-            legImage.setImageResource(R.drawable.legimage11);
-            pic = R.drawable.legimage11;
-        }
     }
     //Methods for left button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
     public void ImageChangeButtonLeft(View view) {

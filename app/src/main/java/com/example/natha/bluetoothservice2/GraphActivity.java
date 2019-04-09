@@ -7,15 +7,11 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -35,8 +31,8 @@ public class GraphActivity extends AppCompatActivity {
     LineChart mpLineChart;
     List<Entry> entries = new ArrayList<>();
 
-    float foo1;
-    float foo2;
+    float time;
+    float emgSignal;
 
     ImageButton homebuttongraph;
 
@@ -63,24 +59,23 @@ public class GraphActivity extends AppCompatActivity {
             String text = intent.getStringExtra("theMessage");
             Log.i("Data Values: ", text);
             String[] values = text.split(",");
-            Log.i("EMG: ", values[0]);
+            Log.i("EMG", values[0]);
             Log.i("time", values[1]);
 
             try {
-                foo1 = Float.parseFloat(values[0]);
+                time = Float.parseFloat(values[0]);
             }
             catch (NumberFormatException e)
             {
                 //foo = 0;
             }
-            Log.i("foo1: ","" +foo1);
             try {
-                foo2 = Float.parseFloat((values[1]));
+                emgSignal = Float.parseFloat((values[1]));
             }
             catch (NumberFormatException e)
             {
                 //foo = 0;
-                foo2 = foo2 + (float) 0.01;
+                emgSignal = emgSignal + (float) 0.01;
             }
 
             addValues();
@@ -99,7 +94,7 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.invalidate();
         lineDataSet1.setCubicIntensity(0.2f);
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
-        lineDataSet1.setColor(Color.rgb(8,120,196));
+        lineDataSet1.setColor(Color.rgb(220,110,0));
         lineDataSet1.setDrawCircles(false);
         //lineDataSet1.setCircleColor(Color.rgb(8,120,196));
         lineDataSet1.setLineWidth(2f);
@@ -139,19 +134,20 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     public void addValues(){
-        Log.i("foo1: ", "" +foo1);
-        Log.i("foo2: ", "" +foo2);
+        //Log.i("time: ", "" + time);
+        //Log.i("emgSignal: ", "" + emgSignal);
 
-        if (foo2 != 0) {
-            entries.add(new Entry(foo2, foo1));
+        if (emgSignal != 0) {
+            entries.add(new Entry(emgSignal, time));
             graphCreate();
         }
 
-        /*if (entries.size()> 20) {
+        if (entries.size()> 60) {
             entries.remove(0);
-        }*/
+        }
 
         Log.i("entriesarray", "" +entries);
+        Log.i("entries size", "" +entries.size());
     }
 
    /* // Method to capture motion events for swiping between activities
