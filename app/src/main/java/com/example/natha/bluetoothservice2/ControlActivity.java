@@ -24,6 +24,7 @@ public class ControlActivity extends AppCompatActivity {
     ImageButton homebuttoncontrol;
     ImageButton resetbutton;
     ImageButton recalibratebutton;
+    ImageButton unlockbutton;
     TextView previousactiontext;
     //int angle;
     PrinterService mPrinterService;
@@ -42,6 +43,7 @@ public class ControlActivity extends AppCompatActivity {
         homebuttoncontrol = (ImageButton) findViewById(R.id.homebuttoncontrol);
         resetbutton = (ImageButton) findViewById(R.id.resetbutton);
         recalibratebutton = (ImageButton) findViewById(R.id.recalibratebutton);
+        unlockbutton = (ImageButton) findViewById(R.id.unlockbutton);
         previousactiontext = (TextView) findViewById(R.id.previousactiontext);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
@@ -204,6 +206,29 @@ public class ControlActivity extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         recalibratebutton.setColorFilter(Color.WHITE);
+                    }
+                }.start();
+            }
+        });
+
+        unlockbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] bytes = "unlock".getBytes();
+                mPrinterService.write(bytes);
+                previousactiontext.setText("Unlock Angle");
+                unlockbutton.setColorFilter(Color.BLACK);
+                new CountDownTimer(100, 50) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        unlockbutton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
