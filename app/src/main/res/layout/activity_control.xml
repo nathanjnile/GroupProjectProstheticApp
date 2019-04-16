@@ -9,72 +9,62 @@
 
     <ImageButton
         android:id="@+id/moveupbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/moveupText"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/moveupText"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/upmovebutton" />
 
     <ImageButton
         android:id="@+id/movedownbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="59dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="80dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/movedownText"
+        app:layout_constraintBottom_toBottomOf="@+id/moveupbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/movedownText"
+        app:layout_constraintTop_toTopOf="@+id/moveupbutton"
         app:srcCompat="@drawable/downmovebutton" />
 
     <ImageButton
         android:id="@+id/maxbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/maxangleText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/maxangleText"
+        app:layout_constraintEnd_toEndOf="@+id/moveupbutton"
+        app:layout_constraintStart_toStartOf="@+id/moveupbutton"
+        app:layout_constraintTop_toBottomOf="@+id/moveupText"
         app:srcCompat="@drawable/maxanglebutton" />
 
     <ImageButton
         android:id="@+id/minbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/minangleText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/minangleText"
+        app:layout_constraintEnd_toEndOf="@+id/movedownbutton"
+        app:layout_constraintStart_toStartOf="@+id/movedownbutton"
+        app:layout_constraintTop_toBottomOf="@+id/movedownText"
         app:srcCompat="@drawable/minanglebutton" />
 
     <ImageButton
         android:id="@+id/lockbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/lockangleText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lockangleText"
+        app:layout_constraintEnd_toEndOf="@+id/maxbutton"
+        app:layout_constraintStart_toStartOf="@+id/maxbutton"
+        app:layout_constraintTop_toBottomOf="@+id/maxangleText"
         app:srcCompat="@drawable/lockbutton" />
 
 
@@ -121,210 +111,110 @@
         android:id="@+id/moveupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Move Up"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/homebuttoncontrol"
-        app:layout_constraintTop_toBottomOf="@+id/controltitle" />
+        app:layout_constraintEnd_toEndOf="@+id/moveupbutton"
+        app:layout_constraintStart_toStartOf="@+id/moveupbutton"
+        app:layout_constraintTop_toBottomOf="@+id/moveupbutton" />
 
     <TextView
         android:id="@+id/movedownText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing_control"
+        android:layout_marginTop="2dp"
         android:text="Move Down"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/moveupText"
-        app:layout_constraintTop_toBottomOf="@+id/moveupText" />
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/movedownbutton"
+        app:layout_constraintStart_toStartOf="@+id/movedownbutton"
+        app:layout_constraintTop_toBottomOf="@+id/movedownbutton" />
 
     <TextView
         android:id="@+id/maxangleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing_control"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Maximum Angle"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/movedownText"
-        app:layout_constraintTop_toBottomOf="@+id/movedownText" />
+        app:layout_constraintEnd_toEndOf="@+id/maxbutton"
+        app:layout_constraintStart_toStartOf="@+id/maxbutton"
+        app:layout_constraintTop_toBottomOf="@+id/maxbutton" />
 
     <TextView
         android:id="@+id/minangleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing_control"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Minimum Angle"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/maxangleText"
-        app:layout_constraintTop_toBottomOf="@+id/maxangleText" />
+        app:layout_constraintEnd_toEndOf="@+id/minbutton"
+        app:layout_constraintStart_toStartOf="@+id/minbutton"
+        app:layout_constraintTop_toBottomOf="@+id/minbutton" />
 
     <TextView
         android:id="@+id/lockangleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing_control"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Lock Angle"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/minangleText"
-        app:layout_constraintTop_toBottomOf="@+id/minangleText" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="81dp"
-        android:layout_height="57dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/moveupbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/moveupbutton"
-        app:layout_constraintVertical_bias="0.47"
-        app:srcCompat="@drawable/footcover" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.696"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@drawable/upmovebutton" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="81dp"
-        android:layout_height="57dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/movedownbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/movedownbutton"
-        app:srcCompat="@drawable/footcover" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.696"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.32999998"
-        app:srcCompat="@drawable/downmovebutton" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="81dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:rotation="-15"
-        app:layout_constraintBottom_toBottomOf="@+id/maxbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/maxbutton"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/footcover" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="81dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:rotation="15"
-        app:layout_constraintBottom_toBottomOf="@+id/minbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/minbutton"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/footcover" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="81dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/lockbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/lockbutton"
-        app:srcCompat="@drawable/footcover" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="8dp"
-        android:layout_height="13dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.59000003"
-        app:srcCompat="@drawable/lockbutton" />
+        app:layout_constraintEnd_toEndOf="@+id/lockbutton"
+        app:layout_constraintStart_toStartOf="@+id/lockbutton"
+        app:layout_constraintTop_toBottomOf="@+id/lockbutton" />
 
     <TextView
         android:id="@+id/resetText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Reset Position"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/lockangleText"
-        app:layout_constraintTop_toBottomOf="@+id/lockangleText" />
+        app:layout_constraintEnd_toEndOf="@+id/resetbutton"
+        app:layout_constraintStart_toStartOf="@+id/resetbutton"
+        app:layout_constraintTop_toBottomOf="@+id/resetbutton" />
 
     <ImageButton
         android:id="@+id/resetbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/resetText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/resetText"
+        app:layout_constraintEnd_toEndOf="@+id/unlockbutton"
+        app:layout_constraintStart_toStartOf="@+id/unlockbutton"
+        app:layout_constraintTop_toBottomOf="@+id/unlocktext"
         app:srcCompat="@drawable/resetbutton" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="81dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/resetbutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/resetbutton"
-        app:srcCompat="@drawable/footcover" />
 
     <TextView
         android:id="@+id/recalibrateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Re-Calibrate"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/resetText"
-        app:layout_constraintTop_toBottomOf="@+id/resetText" />
+        app:layout_constraintEnd_toEndOf="@+id/recalibratebutton"
+        app:layout_constraintStart_toStartOf="@+id/recalibratebutton"
+        app:layout_constraintTop_toBottomOf="@+id/recalibratebutton" />
 
     <ImageButton
         android:id="@+id/recalibratebutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/recalibrateText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recalibrateText"
-        app:srcCompat="@drawable/recalibratebutton" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="81dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recalibratebutton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/recalibratebutton"
-        app:srcCompat="@drawable/footcover" />
+        android:tint="@color/White"
+        app:layout_constraintEnd_toEndOf="@+id/lockbutton"
+        app:layout_constraintStart_toStartOf="@+id/lockbutton"
+        app:layout_constraintTop_toBottomOf="@+id/lockangleText"
+        app:srcCompat="@drawable/recalibratebutton3" />
 
     <TextView
         android:id="@+id/textView6"
@@ -344,33 +234,33 @@
         android:layout_marginTop="24dp"
         android:text="N/A"
         android:textColor="@color/White"
+        android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/homebuttoncontrol" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/unlocktext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
         android:text="Unlock Angle"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/recalibrateText"
-        app:layout_constraintTop_toBottomOf="@+id/recalibrateText" />
+        app:layout_constraintEnd_toEndOf="@+id/unlockbutton"
+        app:layout_constraintStart_toStartOf="@+id/unlockbutton"
+        app:layout_constraintTop_toBottomOf="@+id/unlockbutton" />
 
     <ImageButton
         android:id="@+id/unlockbutton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_home_button"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/textView15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView15"
-        app:srcCompat="@drawable/lockbutton" />
+        app:layout_constraintEnd_toEndOf="@+id/minbutton"
+        app:layout_constraintStart_toStartOf="@+id/minbutton"
+        app:layout_constraintTop_toBottomOf="@+id/minangleText"
+        app:srcCompat="@drawable/unlockbutton" />
 
 
 </android.support.constraint.ConstraintLayout>
