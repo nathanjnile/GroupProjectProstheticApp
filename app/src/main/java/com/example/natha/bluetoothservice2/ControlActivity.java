@@ -101,7 +101,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
                 mPrinterService.write(bytes);
-                previousactiontext.setText("Lock");
+                previousactiontext.setText("Lock Angle");
                 lockbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
