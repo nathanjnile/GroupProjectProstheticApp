@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/legImage"
-        android:layout_width="131dp"
-        android:layout_height="277dp"
+        android:layout_width="155dp"
+        android:layout_height="309dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -92,18 +92,6 @@
         app:layout_constraintTop_toTopOf="@+id/SpeedText" />
 
     <TextView
-        android:id="@+id/controlTextStatus"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner_text"
-        android:gravity="center"
-        android:text="DF Lock"
-        android:textColor="@color/White"
-        app:layout_constraintBottom_toBottomOf="@+id/controlText"
-        app:layout_constraintEnd_toEndOf="@+id/speedTextStatus"
-        app:layout_constraintTop_toTopOf="@+id/controlText" />
-
-    <TextView
         android:id="@+id/angleTextStatus"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -112,7 +100,7 @@
         android:text="Incline"
         android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="@+id/angleText"
-        app:layout_constraintEnd_toEndOf="@+id/controlTextStatus"
+        app:layout_constraintEnd_toEndOf="@+id/speedTextStatus"
         app:layout_constraintTop_toTopOf="@+id/angleText" />
 
     <ImageButton
@@ -183,7 +171,7 @@
         android:id="@+id/stepCounterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing"
+        android:layout_marginTop="12dp"
         android:text="Daily Step Counter"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/bluetoothText"
@@ -193,31 +181,21 @@
         android:id="@+id/SpeedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing"
+        android:layout_marginTop="12dp"
         android:text="Speed Status"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/stepCounterText"
         app:layout_constraintTop_toBottomOf="@+id/stepCounterText" />
 
     <TextView
-        android:id="@+id/controlText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing"
-        android:text="Control Status"
-        android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/SpeedText"
-        app:layout_constraintTop_toBottomOf="@+id/SpeedText" />
-
-    <TextView
         android:id="@+id/angleText"
         android:layout_width="81dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_spacing"
+        android:layout_marginTop="12dp"
         android:text="Angle Status"
         android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/controlText"
-        app:layout_constraintTop_toBottomOf="@+id/controlText" />
+        app:layout_constraintStart_toStartOf="@+id/SpeedText"
+        app:layout_constraintTop_toBottomOf="@+id/SpeedText" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -238,6 +216,60 @@
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/angleText"
         app:layout_constraintTop_toBottomOf="@+id/angleText" />
+
+    <TextView
+        android:id="@+id/emgsensordot"
+        android:layout_width="13dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="66dp"
+        android:background="@drawable/rounded_corners_sensor"
+        android:gravity="center"
+        android:text="A"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/Black"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/legImage"
+        app:layout_constraintTop_toTopOf="@+id/legImage" />
+
+    <TextView
+        android:id="@+id/imusensordot"
+        android:layout_width="13dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="224dp"
+        android:background="@drawable/rounded_corners_sensor"
+        android:gravity="center"
+        android:text="B"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/Black"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/legImage"
+        app:layout_constraintTop_toTopOf="@+id/legImage" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="A. EMG Sensor"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="B. IMU Sensor"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 
 </android.support.constraint.ConstraintLayout>

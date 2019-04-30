@@ -1,5 +1,6 @@
 package com.example.natha.bluetoothservice2;
 
+import android.app.ActionBar;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnClickLeft;
     ImageButton btnClickRight;
     TextView speedTextStatus;
-    TextView controlTextStatus;
+    TextView emgsensordot;
+    TextView imusensordot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         btnClickLeft = (ImageButton) findViewById(R.id.btnClickLeft);
         btnClickRight = (ImageButton) findViewById(R.id.btnClickRight);
         speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
-        controlTextStatus = (TextView) findViewById(R.id.controlTextStatus);
+        emgsensordot = (TextView) findViewById(R.id.emgsensordot);
+        imusensordot = (TextView) findViewById(R.id.imusensordot);
     }
 
     public void graph1() {
