@@ -23,13 +23,14 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
 public class GraphActivity extends AppCompatActivity {
 
     LineChart mpLineChart;
-    List<Entry> entries = new ArrayList<>();
+    List<Entry> entries = new LinkedList<>();
 
     float time;
     float emgSignal;
