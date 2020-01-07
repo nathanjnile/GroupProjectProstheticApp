@@ -105,7 +105,7 @@ public class PrinterService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("PrinterService", "Onstart Command");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        connectToDevice("B8:27:EB:EC:0E:F7");
+        connectToDevice("B8:27:EB:FD:52:0B");
         /*if (mBluetoothAdapter != null) {
             device = (BluetoothDevice) intent.getParcelableExtra(BT_DEVICE);
             deviceName = device.getDeviceName();

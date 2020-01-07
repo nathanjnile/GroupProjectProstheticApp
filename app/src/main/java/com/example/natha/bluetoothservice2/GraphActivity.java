@@ -30,7 +30,7 @@ import java.util.List;
 public class GraphActivity extends AppCompatActivity {
 
     LineChart mpLineChart;
-    List<Entry> entries = new LinkedList<>();
+    List<Entry> entries = new ArrayList<>();
 
     float time;
     float emgSignal;
