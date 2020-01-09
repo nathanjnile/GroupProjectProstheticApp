@@ -1,32 +1,25 @@
 package com.example.natha.bluetoothservice2;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ControlActivity extends AppCompatActivity {
 
-    //ImageView controlfoot;
-    ImageButton upbutton;
-    ImageButton downbutton;
-    ImageButton lockbutton;
-    ImageButton maxbutton;
-    ImageButton minbutton;
-    ImageButton homebuttoncontrol;
-    ImageButton resetbutton;
-    ImageButton recalibratebutton;
-    ImageButton unlockbutton;
-    TextView previousactiontext;
-    //int angle;
+    private ImageButton upbutton;
+    private ImageButton downbutton;
+    private ImageButton lockbutton;
+    private ImageButton maxbutton;
+    private ImageButton minbutton;
+    private ImageButton homebuttoncontrol;
+    private ImageButton resetbutton;
+    private ImageButton recalibratebutton;
+    private ImageButton unlockbutton;
+    private TextView previousactiontext;
     PrinterService mPrinterService;
 
     @Override
@@ -34,25 +27,22 @@ public class ControlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
 
-        //controlfoot = (ImageView) findViewById(R.id.controlfootimage);
-        upbutton = (ImageButton) findViewById(R.id.moveupbutton);
-        downbutton = (ImageButton) findViewById(R.id.movedownbutton);
-        lockbutton = (ImageButton) findViewById(R.id.lockbutton);
-        maxbutton = (ImageButton) findViewById(R.id.maxbutton);
-        minbutton = (ImageButton) findViewById(R.id.minbutton);
-        homebuttoncontrol = (ImageButton) findViewById(R.id.homebuttoncontrol);
-        resetbutton = (ImageButton) findViewById(R.id.resetbutton);
-        recalibratebutton = (ImageButton) findViewById(R.id.recalibratebutton);
-        unlockbutton = (ImageButton) findViewById(R.id.unlockbutton);
-        previousactiontext = (TextView) findViewById(R.id.previousactiontext);
+        upbutton = findViewById(R.id.moveupbutton);
+        downbutton = findViewById(R.id.movedownbutton);
+        lockbutton = findViewById(R.id.lockbutton);
+        maxbutton = findViewById(R.id.maxbutton);
+        minbutton = findViewById(R.id.minbutton);
+        homebuttoncontrol = findViewById(R.id.homebuttoncontrol);
+        resetbutton = findViewById(R.id.resetbutton);
+        recalibratebutton = findViewById(R.id.recalibratebutton);
+        unlockbutton = findViewById(R.id.unlockbutton);
+        previousactiontext = findViewById(R.id.previousactiontext);
 
         upbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //angle = angle - 2;
                 byte[] bytes = "dorsiflex".getBytes();
                 mPrinterService.write(bytes);
-                //controlfoot.setRotation(angle);
                 previousactiontext.setText("Move Up");
                 upbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -77,7 +67,6 @@ public class ControlActivity extends AppCompatActivity {
                 //angle = angle + 2;
                 byte[] bytes = "plantarflex".getBytes();
                 mPrinterService.write(bytes);
-                //controlfoot.setRotation(angle);
                 previousactiontext.setText("Move Down");
                 downbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {

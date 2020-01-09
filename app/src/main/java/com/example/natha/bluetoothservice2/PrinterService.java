@@ -3,30 +3,22 @@ package com.example.natha.bluetoothservice2;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.Toast;
-
-//import com.example.android.common.logger.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.UUID;
-import java.util.Vector;
-
 
 public class PrinterService extends Service {
     private static final String TAG = "BluetoothConnectionServ";
@@ -34,20 +26,13 @@ public class PrinterService extends Service {
     public static final String BT_DEVICE = "raspberrypi";
     public static final String SPP_UUID = "94f39d29-7d6d-437d-973b-fba39e49d4ee";
     public static final int STATE_NONE = 0; // we're doing nothing
-    public static final int STATE_LISTEN = 1; // now listening for incoming
-    // connections
-    public static final int STATE_CONNECTING = 2; // now initiating an outgoing
-    // connection
-    public static final int STATE_CONNECTED = 3; // now connected to a remote
-    // device
+    public static final int STATE_LISTEN = 1; // now listening for incoming connections (unused since no discovery)
+    public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
+    public static final int STATE_CONNECTED = 3; // now connected to a remote device
     private ConnectThread mConnectThread;
     private static ConnectedThread mConnectedThread;
-    // public mInHangler mHandler = new mInHangler(this);
     private static Handler mHandler = null;
     public static int mState = STATE_NONE;
-    public static String deviceName;
-    public Vector<Byte> packdata = new Vector<Byte>(2048);
-    public static BluetoothDevice device = null;
     public static Context mContext;
 
     @Override
@@ -170,24 +155,13 @@ public class PrinterService extends Service {
 
     private void connectionFailed() {
         PrinterService.this.stop();
-        //Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
-        Bundle bundle = new Bundle();
-        bundle.putString(AbstractActivity.TOAST, "unable to connect to device");
-        //msg.setData(bundle);
-        //mHandler.sendMessage(msg);
         Log.d(TAG, "Connection failed");
         sendFailed();
     }
 
-    // TO DELETE
     private void connectionLost() {
         PrinterService.this.stop();
         sendFailed();
-//        Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
-//        Bundle bundle = new Bundle();
-//        bundle.putString(AbstractActivity.TOAST, "Device connection was lost");
-//        msg.setData(bundle);
-//        mHandler.sendMessage(msg);
     }
 
     private static Object obj = new Object();
@@ -294,10 +268,7 @@ public class PrinterService extends Service {
 
         public void run(){
             byte[] buffer = new byte[1024];  // buffer store for the stream
-
             int bytes; // bytes returned from read()
-
-            // Keep listening to the InputStream until an exception occurs
             while (true) {
                 // Read from the InputStream
                 try {
@@ -317,18 +288,12 @@ public class PrinterService extends Service {
             }
         }
 
-        // TO DELETE
-        private byte[] btBuff;
-
-
         public void write(byte[] bytes) {
             String text = new String(bytes, Charset.defaultCharset());
             Log.d(TAG, "write: Writing to outputstream: " + text);
             try {
                 mmOutStream.write(bytes);
                 Log.d(TAG, "After it should be written " + text);
-                // Share the sent message back to the UI Activity
-                //mHandler.obtainMessage(AbstractActivity.MESSAGE_WRITE, buffer.length, -1, buffer).sendToTarget();
             } catch (IOException e) {
                 Log.e("PrinterService", "Exception during write", e);
             }
@@ -366,5 +331,4 @@ public class PrinterService extends Service {
         incomingMessageIntent.putExtra("theMessage3" , bluetoothConnected);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
     }
-
 }
