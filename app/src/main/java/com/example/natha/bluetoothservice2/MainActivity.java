@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d("MainActivity", "OnCreateStarted");
+
         //serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
         //startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
         emgsensordot = (TextView) findViewById(R.id.emgsensordot);
         imusensordot = (TextView) findViewById(R.id.imusensordot);
+
+        Log.d("MainActivity", "OnCreateEnded");
     }
 
     public void graph1() {
@@ -160,151 +164,6 @@ public class MainActivity extends AppCompatActivity {
         service1();
     }
 
-    //Methods for right button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
-    public void ImageChangeButtonRight(View view) {
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.leftfacing) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.frontfacing);
-            pic = R.drawable.frontfacing;
-        } else if (pic == R.drawable.frontfacing) {
-            legImage.setImageResource(R.drawable.rightfacing);
-            pic = R.drawable.rightfacing;
-        } else if (pic == R.drawable.rightfacing) {
-            legImage.setImageResource(R.drawable.backfacing);
-            pic = R.drawable.backfacing;
-        } else if (pic == R.drawable.backfacing) {
-            legImage.setImageResource(R.drawable.leftfacing);
-            pic = R.drawable.leftfacing;
-        }
-    }
-
-    /*public void ImageButtonRight12(View view) {
-        btnClickRight.setColorFilter(Color.BLACK);
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.cadleg1) {
-            legImage.setImageResource(R.drawable.cadleg2);
-            pic = R.drawable.cadleg2;
-        } else if (pic == R.drawable.cadleg2) {
-            legImage.setImageResource(R.drawable.cadleg3);
-            pic = R.drawable.cadleg3;
-        } else if (pic == R.drawable.cadleg3) {
-            legImage.setImageResource(R.drawable.cadleg4);
-            pic = R.drawable.cadleg4;
-        } else if (pic == R.drawable.cadleg4) {
-            legImage.setImageResource(R.drawable.cadleg5);
-            pic = R.drawable.cadleg5;
-        } else if (pic == R.drawable.cadleg5) {
-            legImage.setImageResource(R.drawable.cadleg6);
-            pic = R.drawable.cadleg6;
-        } else if (pic == R.drawable.cadleg6) {
-            legImage.setImageResource(R.drawable.cadleg7);
-            pic = R.drawable.cadleg7;
-        } else if (pic == R.drawable.cadleg7) {
-            legImage.setImageResource(R.drawable.cadleg8);
-            pic = R.drawable.cadleg8;
-        } else if (pic == R.drawable.cadleg8) {
-            legImage.setImageResource(R.drawable.legimage9);
-            pic = R.drawable.legimage9;
-        } else if (pic == R.drawable.legimage9) {
-            legImage.setImageResource(R.drawable.legimage10);
-            pic = R.drawable.legimage10;
-        } else if (pic == R.drawable.legimage10) {
-            legImage.setImageResource(R.drawable.legimage11);
-            pic = R.drawable.legimage11;
-        } else if (pic == R.drawable.legimage11) {
-            legImage.setImageResource(R.drawable.legimage12);
-            pic = R.drawable.legimage12;
-        } else if (pic == R.drawable.legimage12) {
-            legImage.setImageResource(R.drawable.cadleg1);
-            pic = R.drawable.cadleg1;
-        }
-        new CountDownTimer(100, 50) {
-
-            @Override
-            public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onFinish() {
-                btnClickRight.setColorFilter(Color.WHITE);
-            }
-        }.start();
-    }*/
-
-    /*public void ImageButtonLeft12(View view) {
-        btnClickLeft.setColorFilter(Color.BLACK);
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.cadleg1) { //if prosthetic is facing left
-            legImage.setImageResource(R.drawable.legimage12);
-            pic = R.drawable.legimage12;
-        } else if (pic == R.drawable.cadleg2) {
-            legImage.setImageResource(R.drawable.cadleg1);
-            pic = R.drawable.cadleg1;
-        } else if (pic == R.drawable.cadleg3) {
-            legImage.setImageResource(R.drawable.cadleg2);
-            pic = R.drawable.cadleg2;
-        } else if (pic == R.drawable.cadleg4) {
-            legImage.setImageResource(R.drawable.cadleg3);
-            pic = R.drawable.cadleg3;
-        } else if (pic == R.drawable.cadleg5) {
-            legImage.setImageResource(R.drawable.cadleg4);
-            pic = R.drawable.cadleg4;
-        } else if (pic == R.drawable.cadleg6) {
-            legImage.setImageResource(R.drawable.cadleg5);
-            pic = R.drawable.cadleg5;
-        } else if (pic == R.drawable.cadleg7) {
-            legImage.setImageResource(R.drawable.cadleg6);
-            pic = R.drawable.cadleg6;
-        } else if (pic == R.drawable.cadleg8) {
-            legImage.setImageResource(R.drawable.cadleg7);
-            pic = R.drawable.cadleg7;
-        } else if (pic == R.drawable.legimage9) {
-            legImage.setImageResource(R.drawable.cadleg8);
-            pic = R.drawable.cadleg8;
-        } else if (pic == R.drawable.legimage10) {
-            legImage.setImageResource(R.drawable.legimage9);
-            pic = R.drawable.legimage9;
-        } else if (pic == R.drawable.legimage11) {
-            legImage.setImageResource(R.drawable.legimage10);
-            pic = R.drawable.legimage10;
-        } else if (pic == R.drawable.legimage12) {
-            legImage.setImageResource(R.drawable.legimage11);
-            pic = R.drawable.legimage11;
-        }
-        new CountDownTimer(100, 50) {
-
-            @Override
-            public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onFinish() {
-                btnClickLeft.setColorFilter(Color.WHITE);
-            }
-        }.start();
-    }*/
-    //Methods for left button. Checks what direction the prosthetic is facing, changes the image by a 90 degree rotation and sets it as the new image
-    public void ImageChangeButtonLeft(View view) {
-        legImage = findViewById(R.id.legImage);
-        if (pic == R.drawable.leftfacing) {
-            legImage.setImageResource(R.drawable.backfacing);
-            pic = R.drawable.backfacing;
-        } else if (pic == R.drawable.backfacing) {
-            legImage.setImageResource(R.drawable.rightfacing);
-            pic = R.drawable.rightfacing;
-        } else if (pic == R.drawable.rightfacing) {
-            legImage.setImageResource(R.drawable.frontfacing);
-            pic = R.drawable.frontfacing;
-        } else if (pic == R.drawable.frontfacing) {
-            legImage.setImageResource(R.drawable.leftfacing);
-            pic = R.drawable.leftfacing;
-        }
-    }
-
     public void ImageButtonRight(View view) {
         btnClickRight.setColorFilter(Color.BLACK);
         legImage = findViewById(R.id.legImage);
@@ -390,30 +249,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
     }
-
-   /* // Method to capture motion events for swiping between activities
-    @Override
-    public boolean onTouchEvent (MotionEvent event){
-        this.gestureObject.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
-
-    // Class to learn swipe gesture
-    class LearnGesture extends GestureDetector.SimpleOnGestureListener{
-        // SimpleOnGestureListener listens for what we want to do and how
-
-        @Override
-        public boolean onFling(MotionEvent event1, MotionEvent event2,
-                               float velocityX, float velocityY){
-            if (event2.getX() > event1.getX()){ // action when swiping left
-                graph1();
-            }
-            else if(event2.getX() < event1.getX()){ // action when swiping right
-                Contact();
-            }
-            return true;
-        }
-    }*/
 
     BroadcastReceiver mReceiver2 = new BroadcastReceiver() {
         @Override

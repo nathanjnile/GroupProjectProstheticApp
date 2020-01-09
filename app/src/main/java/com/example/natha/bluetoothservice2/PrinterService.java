@@ -52,12 +52,13 @@ public class PrinterService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d("PrinterService", "Service started");
+        Log.d("PrinterService", "Service started, OnCreate Started");
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver3, new IntentFilter("bluetoothFailed"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
         super.onCreate();
+        Log.d("PrinterService", "OnCreate Ended");
     }
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -97,30 +98,13 @@ public class PrinterService extends Service {
         }
     }
 
-
-
     private final IBinder mBinder = new LocalBinder();
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("PrinterService", "Onstart Command");
+        Log.d("PrinterService", "Onstart Command Started");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         connectToDevice("B8:27:EB:FD:52:0B");
-        /*if (mBluetoothAdapter != null) {
-            device = (BluetoothDevice) intent.getParcelableExtra(BT_DEVICE);
-            deviceName = device.getDeviceName();
-            String macAddress = device.getMacAddress();
-            if (macAddress != null && macAddress.length() > 0) {
-                connectToDevice(macAddress);
-            } else {
-                stopSelf();
-                return 0;
-            }
-        }*/
-        String stopservice = intent.getStringExtra("stopservice");
-        if (stopservice != null && stopservice.length() > 0) {
-            stop();
-        }
         return START_STICKY;
     }
 
@@ -195,7 +179,7 @@ public class PrinterService extends Service {
         sendFailed();
     }
 
-
+    // TO DELETE
     private void connectionLost() {
         PrinterService.this.stop();
         Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
@@ -365,15 +349,6 @@ public class PrinterService extends Service {
             sendFailed();
         }
 
-    }
-
-    public void trace(String msg) {
-        Log.d("AbstractActivity", msg);
-        toast(msg);
-    }
-
-    public void toast(String msg) {
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
