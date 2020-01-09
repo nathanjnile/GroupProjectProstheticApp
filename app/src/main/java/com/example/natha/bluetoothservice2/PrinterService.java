@@ -182,11 +182,12 @@ public class PrinterService extends Service {
     // TO DELETE
     private void connectionLost() {
         PrinterService.this.stop();
-        Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
-        Bundle bundle = new Bundle();
-        bundle.putString(AbstractActivity.TOAST, "Device connection was lost");
-        msg.setData(bundle);
-        mHandler.sendMessage(msg);
+        sendFailed();
+//        Message msg = mHandler.obtainMessage(AbstractActivity.MESSAGE_TOAST);
+//        Bundle bundle = new Bundle();
+//        bundle.putString(AbstractActivity.TOAST, "Device connection was lost");
+//        msg.setData(bundle);
+//        mHandler.sendMessage(msg);
     }
 
     private static Object obj = new Object();
@@ -223,14 +224,7 @@ public class PrinterService extends Service {
         mConnectedThread.start();
         Log.d(TAG, "connected through connected method");
         sendConnected();
-        // Message msg =
-        // mHandler.obtainMessage(AbstractActivity.MESSAGE_DEVICE_NAME);
-        // Bundle bundle = new Bundle();
-        // bundle.putString(AbstractActivity.DEVICE_NAME, "p25");
-        // msg.setData(bundle);
-        // mHandler.sendMessage(msg);
         setState(STATE_CONNECTED);
-
     }
 
     private class ConnectThread extends Thread {
@@ -317,12 +311,13 @@ public class PrinterService extends Service {
 
                 } catch (IOException e) {
                     Log.e(TAG, "write: Error reading Input Stream. " + e.getMessage() );
+                    connectionLost();
                     break;
                 }
             }
         }
 
-
+        // TO DELETE
         private byte[] btBuff;
 
 
@@ -357,36 +352,6 @@ public class PrinterService extends Service {
         Log.d("Printer Service", "Destroyed");
         super.onDestroy();
     }
-
-    private void sendMsg(int flag) {
-        Message msg = new Message();
-        msg.what = flag;
-        handler.sendMessage(msg);
-    }
-
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {//
-            if (!Thread.currentThread().isInterrupted()) {
-                switch (msg.what) {
-                    case 3:
-
-                        break;
-
-                    case 4:
-
-                        break;
-                    case 5:
-                        break;
-
-                    case -1:
-                        break;
-                }
-            }
-            super.handleMessage(msg);
-        }
-
-    };
 
     public void sendFailed(){
         String bluetoothFailed = "Not Connected";
