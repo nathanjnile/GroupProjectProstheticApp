@@ -44,6 +44,25 @@ public class PrinterService extends Service {
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
         super.onCreate();
         Log.d("PrinterService", "OnCreate Ended");
+        checkIfBluetoothIsOn();
+    }
+
+    private boolean checkIfBluetoothIsOn() {
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            //PrinterService.this.stop();
+            return false;
+            // Device does not support Bluetooth
+        } else if (!mBluetoothAdapter.isEnabled()) {
+            //PrinterService.this.stop();
+            Log.d("PrinterService", "Bluetooth is Off");
+            return false;
+            // Bluetooth is not enabled :)
+        } else {
+            Log.d("PrinterService", "Bluetooth is On");
+            // Bluetooth is enabled
+            return true;
+        }
     }
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -89,7 +108,11 @@ public class PrinterService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("PrinterService", "Onstart Command Started");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        connectToDevice("B8:27:EB:FD:52:0B");
+        if (checkIfBluetoothIsOn()) {
+            connectToDevice("B8:27:EB:FD:52:0B");
+        } else {
+            PrinterService.this.stop();
+        }
         return START_STICKY;
     }
 
