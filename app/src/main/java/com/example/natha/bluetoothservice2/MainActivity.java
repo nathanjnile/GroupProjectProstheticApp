@@ -19,21 +19,21 @@ public class MainActivity extends AppCompatActivity {
 
     private Intent serviceIntent;
     private static final String TAG = "OutputStream";
-    ImageView legImage;
+    private ImageView legImage;
     int pic = R.drawable.cadleg8; //set initial image
-    double stepsValue;
-    double inclineValue;
-    double speedValueDouble;
-    TextView incomingMessages;
-    TextView inclineTextView;
-    TextView bluetoothText;
-    ImageButton controlButton;
-    ImageButton bluetoothButton;
-    ImageButton contactsButton;
-    ImageButton graphButton;
-    ImageButton btnClickLeft;
-    ImageButton btnClickRight;
-    TextView speedTextStatus;
+    private double stepsValue;
+    private double inclineValue;
+    private double speedValueDouble;
+    private TextView incomingMessages;
+    private TextView inclineTextView;
+    private TextView bluetoothText;
+    private ImageButton controlButton;
+    private ImageButton bluetoothButton;
+    private ImageButton contactsButton;
+    private ImageButton graphButton;
+    private ImageButton btnClickLeft;
+    private ImageButton btnClickRight;
+    private TextView speedTextStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

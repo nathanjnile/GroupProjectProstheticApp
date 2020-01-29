@@ -221,8 +221,6 @@ public class ControlActivity extends AppCompatActivity {
                 homeButtonControl.setColorFilter(Color.WHITE);
             }
         }.start();
-        /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
-        startActivity(myintent7); // start activity , switch to graph1*/
         finish();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
     }

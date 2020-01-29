@@ -29,7 +29,7 @@ public class ContactsActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:07534824108"));
+                callIntent.setData(Uri.parse("tel:0753424107"));
                 startActivity(callIntent);
 
                 callButton.setColorFilter(Color.BLACK);
