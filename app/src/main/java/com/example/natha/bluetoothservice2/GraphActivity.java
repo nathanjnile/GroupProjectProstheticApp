@@ -30,14 +30,12 @@ import java.util.List;
 public class GraphActivity extends AppCompatActivity {
 
     LineChart mpLineChart;
-    List<Entry> entries = new ArrayList<>();
+    List<Entry> entries = new LinkedList<>();
 
     float time;
     float emgSignal;
 
-    ImageButton homebuttongraph;
-
-    //private GestureDetectorCompat gestureObject;
+    ImageButton homeButtonGraph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +43,9 @@ public class GraphActivity extends AppCompatActivity {
         setContentView(R.layout.activity_graph);
 
         addValues();
-        //graphCreate();
 
-        //incomingMessages = (TextView) findViewById(R.id.incomingMessage2);
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
-        homebuttongraph= (ImageButton) findViewById(R.id.homebuttongraph);
+        homeButtonGraph = findViewById(R.id.homebuttongraph);
 
     }
 
@@ -76,7 +71,7 @@ public class GraphActivity extends AppCompatActivity {
             catch (NumberFormatException e)
             {
                 //foo = 0;
-                emgSignal = emgSignal + (float) 0.01;
+                emgSignal = emgSignal +  0.01f;
             }
 
             addValues();
@@ -97,14 +92,11 @@ public class GraphActivity extends AppCompatActivity {
         lineDataSet1.setAxisDependency(YAxis.AxisDependency.LEFT);
         lineDataSet1.setColor(Color.rgb(220,110,0));
         lineDataSet1.setDrawCircles(false);
-        //lineDataSet1.setCircleColor(Color.rgb(8,120,196));
         lineDataSet1.setLineWidth(2f);
         lineDataSet1.setFillAlpha(65);
         lineDataSet1.setFillColor(ColorTemplate.getHoloBlue());
-        //lineDataSet1.setCircleHoleColor(Color.rgb(8,120,196));
         lineDataSet1.setHighLightColor(Color.rgb(244,117,177));
         lineDataSet1.setValueTextColor(Color.WHITE);
-        //lineDataSet1.setCircleRadius(1f);
         lineDataSet1.setValueTextSize(5f);
         lineDataSet1.setDrawValues(false);
         lineDataSet1.setLabel("");
@@ -117,10 +109,6 @@ public class GraphActivity extends AppCompatActivity {
         mpLineChart.setBackgroundColor(Color.rgb(29,29,29));
         mpLineChart.setVisibleXRangeMaximum(3f);
         mpLineChart.moveViewToX(data.getEntryCount());
-        //Legend l = mpLineChart.getLegend();
-        //l.setForm(Legend.LegendForm.LINE);
-        //l.setTextColor(Color.WHITE);
-        //l.setXOffset(70f);
         XAxis x1 = mpLineChart.getXAxis();
         x1.setTextColor(Color.WHITE);
         x1.setDrawGridLines(true);
@@ -151,32 +139,8 @@ public class GraphActivity extends AppCompatActivity {
         Log.i("entries size", "" +entries.size());
     }
 
-   /* // Method to capture motion events for swiping between activities
-    @Override
-    public boolean onTouchEvent (MotionEvent event){
-        this.gestureObject.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
-
-    // Class to learn swipe gesture
-    class LearnGesture extends GestureDetector.SimpleOnGestureListener{
-        // SimpleOnGestureListener listens for what we want to do and how
-
-        @Override
-        public boolean onFling(MotionEvent event1, MotionEvent event2,
-                               float velocityX, float velocityY){
-            if (event2.getX() > event1.getX()){ // action when swiping left
-
-            }
-            else if(event2.getX() < event1.getX()){ // action when swiping right
-                finish();
-            }
-            return true;
-        }
-    }*/
-
     public void main1() {
-        homebuttongraph.setColorFilter(Color.BLACK);
+        homeButtonGraph.setColorFilter(Color.BLACK);
         new CountDownTimer(100, 50) {
 
             @Override
@@ -187,11 +151,9 @@ public class GraphActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                homebuttongraph.setColorFilter(Color.WHITE);
+                homeButtonGraph.setColorFilter(Color.WHITE);
             }
         }.start();
-        /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity
-        startActivity(myintent7); // start activity , switch to graph1*/
         finish();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
     }

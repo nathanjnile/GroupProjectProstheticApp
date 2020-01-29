@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "OutputStream";
     ImageView legImage;
     int pic = R.drawable.cadleg8; //set initial image
-    Float stepsValue;
-    Float inclineValue;
-    Float speedValueFloat;
+    double stepsValue;
+    double inclineValue;
+    double speedValueDouble;
     TextView incomingMessages;
     TextView inclineTextView;
     TextView bluetoothText;
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i("values2", values2[6]);
             String text3 = values2[6];
             try {
-                stepsValue = Float.parseFloat(text3);
+                stepsValue = Double.parseDouble(text3);
             }
             catch (NumberFormatException e)
             {
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
             String inclineStatus = values2[5];
 
             try {
-                inclineValue = Float.parseFloat(inclineStatus);
+                inclineValue = Double.parseDouble(inclineStatus);
             }
             catch (NumberFormatException e)
             {
@@ -263,13 +263,13 @@ public class MainActivity extends AppCompatActivity {
             String speedValueString = values2[7];
 
             try {
-                speedValueFloat = Float.parseFloat(speedValueString);
+                speedValueDouble = Double.parseDouble(speedValueString);
             }
             catch (NumberFormatException e)
             {
             }
 
-            if (speedValueFloat == 0) {
+            if (speedValueDouble == 0) {
                 speedTextStatus.setText("Low Speed");
             }   else {
                     speedTextStatus.setText("High Speed");
