@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/legImage"
-        android:layout_width="155dp"
-        android:layout_height="309dp"
+        android:layout_width="226dp"
+        android:layout_height="487dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -216,40 +216,6 @@
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@+id/angleText"
         app:layout_constraintTop_toBottomOf="@+id/angleText" />
-
-    <TextView
-        android:id="@+id/emgsensordot"
-        android:layout_width="13dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="66dp"
-        android:background="@drawable/rounded_corners_sensor"
-        android:gravity="center"
-        android:text="A"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/Black"
-        android:textSize="9sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="@+id/legImage" />
-
-    <TextView
-        android:id="@+id/imusensordot"
-        android:layout_width="13dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="224dp"
-        android:background="@drawable/rounded_corners_sensor"
-        android:gravity="center"
-        android:text="B"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/Black"
-        android:textSize="9sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/legImage"
-        app:layout_constraintTop_toTopOf="@+id/legImage" />
 
     <TextView
         android:id="@+id/textView17"

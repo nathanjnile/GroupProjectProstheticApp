@@ -18,8 +18,6 @@ public class LoadingActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override

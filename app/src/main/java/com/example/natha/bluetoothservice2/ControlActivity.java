@@ -10,16 +10,16 @@ import android.widget.TextView;
 
 public class ControlActivity extends AppCompatActivity {
 
-    private ImageButton upbutton;
-    private ImageButton downbutton;
-    private ImageButton lockbutton;
-    private ImageButton maxbutton;
-    private ImageButton minbutton;
-    private ImageButton homebuttoncontrol;
-    private ImageButton resetbutton;
-    private ImageButton recalibratebutton;
-    private ImageButton unlockbutton;
-    private TextView previousactiontext;
+    private ImageButton upButton;
+    private ImageButton downButton;
+    private ImageButton lockButton;
+    private ImageButton maxButton;
+    private ImageButton minButton;
+    private ImageButton homeButtonControl;
+    private ImageButton resetButton;
+    private ImageButton recalibrateButton;
+    private ImageButton unlockButton;
+    private TextView previousActionText;
     BluetoothService mBluetoothService;
 
     @Override
@@ -27,197 +27,180 @@ public class ControlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
 
-        upbutton = findViewById(R.id.moveupbutton);
-        downbutton = findViewById(R.id.movedownbutton);
-        lockbutton = findViewById(R.id.lockbutton);
-        maxbutton = findViewById(R.id.maxbutton);
-        minbutton = findViewById(R.id.minbutton);
-        homebuttoncontrol = findViewById(R.id.homebuttoncontrol);
-        resetbutton = findViewById(R.id.resetbutton);
-        recalibratebutton = findViewById(R.id.recalibratebutton);
-        unlockbutton = findViewById(R.id.unlockbutton);
-        previousactiontext = findViewById(R.id.previousactiontext);
+        upButton = findViewById(R.id.moveupbutton);
+        downButton = findViewById(R.id.movedownbutton);
+        lockButton = findViewById(R.id.lockbutton);
+        maxButton = findViewById(R.id.maxbutton);
+        minButton = findViewById(R.id.minbutton);
+        homeButtonControl = findViewById(R.id.homebuttoncontrol);
+        resetButton = findViewById(R.id.resetbutton);
+        recalibrateButton = findViewById(R.id.recalibratebutton);
+        unlockButton = findViewById(R.id.unlockbutton);
+        previousActionText = findViewById(R.id.previousactiontext);
 
-        upbutton.setOnClickListener(new View.OnClickListener() {
+        upButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "dorsiflex".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Move Up");
-                upbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Move Up");
+                upButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        upbutton.setColorFilter(Color.WHITE);
+                        upButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        downbutton.setOnClickListener(new View.OnClickListener() {
+        downButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //angle = angle + 2;
                 byte[] bytes = "plantarflex".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Move Down");
-                downbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Move Down");
+                downButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        downbutton.setColorFilter(Color.WHITE);
+                        downButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        lockbutton.setOnClickListener(new View.OnClickListener() {
+        lockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Lock Angle");
-                lockbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Lock Angle");
+                lockButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        lockbutton.setColorFilter(Color.WHITE);
+                        lockButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        maxbutton.setOnClickListener(new View.OnClickListener() {
+        maxButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "maxdorsiflex".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Maximum Angle");
-                maxbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Maximum Angle");
+                maxButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        maxbutton.setColorFilter(Color.WHITE);
+                        maxButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        minbutton.setOnClickListener(new View.OnClickListener() {
+        minButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "maxplantarflex".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Minimum Angle");
-                minbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Minimum Angle");
+                minButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        minbutton.setColorFilter(Color.WHITE);
+                        minButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        resetbutton.setOnClickListener(new View.OnClickListener() {
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "resetposition".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Reset Position");
-                resetbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Reset Position");
+                resetButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        resetbutton.setColorFilter(Color.WHITE);
+                        resetButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        recalibratebutton.setOnClickListener(new View.OnClickListener() {
+        recalibrateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "recalibrate".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Re-Calibrate");
-                recalibratebutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Re-Calibrate");
+                recalibrateButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        recalibratebutton.setColorFilter(Color.WHITE);
+                        recalibrateButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
         });
 
-        unlockbutton.setOnClickListener(new View.OnClickListener() {
+        unlockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "unlock".getBytes();
                 mBluetoothService.write(bytes);
-                previousactiontext.setText("Unlock Angle");
-                unlockbutton.setColorFilter(Color.BLACK);
+                previousActionText.setText("Unlock Angle");
+                unlockButton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
 
                     @Override
                     public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
-
                     }
 
                     @Override
                     public void onFinish() {
-                        unlockbutton.setColorFilter(Color.WHITE);
+                        unlockButton.setColorFilter(Color.WHITE);
                     }
                 }.start();
             }
@@ -226,18 +209,16 @@ public class ControlActivity extends AppCompatActivity {
     }
 
     public void main1() {
-        homebuttoncontrol.setColorFilter(Color.BLACK);
+        homeButtonControl.setColorFilter(Color.BLACK);
         new CountDownTimer(100, 50) {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
             public void onFinish() {
-                homebuttoncontrol.setColorFilter(Color.WHITE);
+                homeButtonControl.setColorFilter(Color.WHITE);
             }
         }.start();
         /*Intent myintent7 = new Intent(this, MainActivity.class); // new intent of analytics activity

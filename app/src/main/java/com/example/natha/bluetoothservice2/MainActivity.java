@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnClickLeft;
     ImageButton btnClickRight;
     TextView speedTextStatus;
-    TextView emgsensordot;
-    TextView imusensordot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         btnClickLeft = (ImageButton) findViewById(R.id.btnClickLeft);
         btnClickRight = (ImageButton) findViewById(R.id.btnClickRight);
         speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
-        emgsensordot = (TextView) findViewById(R.id.emgsensordot);
-        imusensordot = (TextView) findViewById(R.id.imusensordot);
 
         Log.d("MainActivity", "OnCreateEnded");
     }
