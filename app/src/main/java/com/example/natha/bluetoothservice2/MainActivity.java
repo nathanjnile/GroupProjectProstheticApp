@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent serviceIntent;
     private static final String TAG = "OutputStream";
     private ImageView legImage;
-    int pic = R.drawable.cadleg8; //set initial image
+    private int pic = R.drawable.cadleg8; //set initial image
     private double stepsValue;
     private double inclineValue;
     private double speedValueDouble;
