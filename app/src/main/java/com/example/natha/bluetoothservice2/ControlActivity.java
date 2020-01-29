@@ -20,7 +20,7 @@ public class ControlActivity extends AppCompatActivity {
     private ImageButton recalibratebutton;
     private ImageButton unlockbutton;
     private TextView previousactiontext;
-    PrinterService mPrinterService;
+    BluetoothService mBluetoothService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "dorsiflex".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Move Up");
                 upbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -66,7 +66,7 @@ public class ControlActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //angle = angle + 2;
                 byte[] bytes = "plantarflex".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Move Down");
                 downbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -89,7 +89,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "lock".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Lock Angle");
                 lockbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -112,7 +112,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "maxdorsiflex".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Maximum Angle");
                 maxbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -135,7 +135,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "maxplantarflex".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Minimum Angle");
                 minbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -158,7 +158,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "resetposition".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Reset Position");
                 resetbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -181,7 +181,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "recalibrate".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Re-Calibrate");
                 recalibratebutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {
@@ -204,7 +204,7 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 byte[] bytes = "unlock".getBytes();
-                mPrinterService.write(bytes);
+                mBluetoothService.write(bytes);
                 previousactiontext.setText("Unlock Angle");
                 unlockbutton.setColorFilter(Color.BLACK);
                 new CountDownTimer(100, 50) {

@@ -1,6 +1,5 @@
 package com.example.natha.bluetoothservice2;
 
-import android.app.ActionBar;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("MainActivity", "OnCreateStarted");
 
-        //serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
+        //serviceIntent=new Intent(getApplicationContext(),BluetoothService.class);
         //startService(serviceIntent); // starts the service
         //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
@@ -156,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 bluetoothButton.setColorFilter(Color.WHITE);
             }
         }.start();
-        serviceIntent=new Intent(getApplicationContext(),PrinterService.class);
+        serviceIntent=new Intent(getApplicationContext(), BluetoothService.class);
         startService(serviceIntent); // starts the service
     }
 

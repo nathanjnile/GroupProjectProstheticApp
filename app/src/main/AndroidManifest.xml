@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".PrinterService" />
+        <service android:name=".BluetoothService" />
 
         <activity android:name=".GraphActivity" />
         <activity android:name=".ControlActivity" />

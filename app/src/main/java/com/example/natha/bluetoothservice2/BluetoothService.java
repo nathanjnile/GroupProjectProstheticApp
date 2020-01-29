@@ -20,7 +20,7 @@ import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.UUID;
 
-public class PrinterService extends Service {
+public class BluetoothService extends Service {
     private static final String TAG = "BluetoothConnectionServ";
     private BluetoothAdapter mBluetoothAdapter;
     public static final String BT_DEVICE = "raspberrypi";
@@ -37,29 +37,29 @@ public class PrinterService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d("PrinterService", "Service started, OnCreate Started");
+        Log.d("BluetoothService", "Service started, OnCreate Started");
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver3, new IntentFilter("bluetoothFailed"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
         super.onCreate();
-        Log.d("PrinterService", "OnCreate Ended");
+        Log.d("BluetoothService", "OnCreate Ended");
         checkIfBluetoothIsOn();
     }
 
     private boolean checkIfBluetoothIsOn() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
-            //PrinterService.this.stop();
+            //BluetoothService.this.stop();
             return false;
             // Device does not support Bluetooth
         } else if (!mBluetoothAdapter.isEnabled()) {
-            //PrinterService.this.stop();
-            Log.d("PrinterService", "Bluetooth is Off");
+            //BluetoothService.this.stop();
+            Log.d("BluetoothService", "Bluetooth is Off");
             return false;
             // Bluetooth is not enabled :)
         } else {
-            Log.d("PrinterService", "Bluetooth is On");
+            Log.d("BluetoothService", "Bluetooth is On");
             // Bluetooth is enabled
             return true;
         }
@@ -97,8 +97,8 @@ public class PrinterService extends Service {
     }
 
     public class LocalBinder extends Binder {
-        PrinterService getService() {
-            return PrinterService.this;
+        BluetoothService getService() {
+            return BluetoothService.this;
         }
     }
 
@@ -106,12 +106,12 @@ public class PrinterService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("PrinterService", "Onstart Command Started");
+        Log.d("BluetoothService", "Onstart Command Started");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (checkIfBluetoothIsOn()) {
             connectToDevice("B8:27:EB:FD:52:0B");
         } else {
-            PrinterService.this.stop();
+            BluetoothService.this.stop();
         }
         return START_STICKY;
     }
@@ -137,10 +137,7 @@ public class PrinterService extends Service {
     }
 
     private void setState(int state) {
-        PrinterService.mState = state;
-        if (mHandler != null) {
-            mHandler.obtainMessage(AbstractActivity.MESSAGE_STATE_CHANGE, state, -1).sendToTarget();
-        }
+        BluetoothService.mState = state;
     }
 
     public synchronized void stop() {
@@ -177,13 +174,13 @@ public class PrinterService extends Service {
     }
 
     private void connectionFailed() {
-        PrinterService.this.stop();
+        BluetoothService.this.stop();
         Log.d(TAG, "Connection failed");
         sendFailed();
     }
 
     private void connectionLost() {
-        PrinterService.this.stop();
+        BluetoothService.this.stop();
         sendFailed();
     }
 
@@ -255,7 +252,7 @@ public class PrinterService extends Service {
                 return;
 
             }
-            synchronized (PrinterService.this) {
+            synchronized (BluetoothService.this) {
                 mConnectThread = null;
             }
             connected(mmSocket, mmDevice);
@@ -265,7 +262,7 @@ public class PrinterService extends Service {
             try {
                 mmSocket.close();
             } catch (IOException e) {
-                Log.e("PrinterService", "close() of connect socket failed", e);
+                Log.e("BluetoothService", "close() of connect socket failed", e);
             }
         }
     }
@@ -318,7 +315,7 @@ public class PrinterService extends Service {
                 mmOutStream.write(bytes);
                 Log.d(TAG, "After it should be written " + text);
             } catch (IOException e) {
-                Log.e("PrinterService", "Exception during write", e);
+                Log.e("BluetoothService", "Exception during write", e);
             }
         }
 
@@ -327,7 +324,7 @@ public class PrinterService extends Service {
                 mmSocket.close();
 
             } catch (IOException e) {
-                Log.e("PrinterService", "close() of connect socket failed", e);
+                Log.e("BluetoothService", "close() of connect socket failed", e);
             }
             sendFailed();
         }
