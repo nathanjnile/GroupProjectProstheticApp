@@ -20,9 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent serviceIntent;
     private static final String TAG = "OutputStream";
     ImageView legImage;
-    int pic = R.drawable.cadleg8; //set initial image as left facing prosthetic
-    // Gesture object to change activity when swiping
-    //private GestureDetectorCompat gestureObject;
+    int pic = R.drawable.cadleg8; //set initial image
     Float stepsValue;
     Float inclineValue;
     Float speedValueFloat;
@@ -44,22 +42,19 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("MainActivity", "OnCreateStarted");
 
-        //serviceIntent=new Intent(getApplicationContext(),BluetoothService.class);
-        //startService(serviceIntent); // starts the service
-        //gestureObject = new GestureDetectorCompat(this, new LearnGesture());
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver2, new IntentFilter("incomingMessage"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver3, new IntentFilter("bluetoothFailed"));
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver4, new IntentFilter("bluetoothConnected"));
-        incomingMessages = (TextView) findViewById(R.id.stepCounterStatus);
-        inclineTextView = (TextView) findViewById(R.id.angleTextStatus);
-        bluetoothText = (TextView) findViewById(R.id.bluetoothTextStatus);
-        controlButton = (ImageButton) findViewById(R.id.controlButton);
-        bluetoothButton = (ImageButton) findViewById(R.id.bluetoothButton);
-        contactsButton = (ImageButton) findViewById(R.id.contactsButton);
-        graphButton = (ImageButton) findViewById(R.id.graphButton);
-        btnClickLeft = (ImageButton) findViewById(R.id.btnClickLeft);
-        btnClickRight = (ImageButton) findViewById(R.id.btnClickRight);
-        speedTextStatus = (TextView) findViewById(R.id.speedTextStatus);
+        incomingMessages = findViewById(R.id.stepCounterStatus);
+        inclineTextView = findViewById(R.id.angleTextStatus);
+        bluetoothText = findViewById(R.id.bluetoothTextStatus);
+        controlButton = findViewById(R.id.controlButton);
+        bluetoothButton = findViewById(R.id.bluetoothButton);
+        contactsButton = findViewById(R.id.contactsButton);
+        graphButton = findViewById(R.id.graphButton);
+        btnClickLeft = findViewById(R.id.btnClickLeft);
+        btnClickRight = findViewById(R.id.btnClickRight);
+        speedTextStatus = findViewById(R.id.speedTextStatus);
 
         Log.d("MainActivity", "OnCreateEnded");
     }
@@ -70,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -79,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 graphButton.setColorFilter(Color.WHITE);
             }
         }.start();
-        Intent myintent5 = new Intent(this, MainGraphActivity.class); // new intent of analytics activity
-        startActivity(myintent5); // start activity , switch to graph1
+        Intent myIntent5 = new Intent(this, GraphActivity.class); // new intent of graph activity
+        startActivity(myIntent5); // start activity , switch to graph1
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }
 
@@ -94,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -103,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 controlButton.setColorFilter(Color.WHITE);
             }
         }.start();
-        Intent myintent6 = new Intent(this, ControlActivity.class); // new intent of analytics activity
-        startActivity(myintent6); // start activity , switch to control activity
+        Intent myIntent6 = new Intent(this, ControlActivity.class); // new intent of control activity
+        startActivity(myIntent6); // start activity , switch to control activity
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right); // insert animations
     }
 
@@ -118,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -127,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 contactsButton.setColorFilter(Color.WHITE);
             }
         }.start();
-        Intent myintent7 = new Intent(this, ContactsActivity.class); // new intent of analytics activity
-        startActivity(myintent7); // start activity , switch to graph1
+        Intent myIntent7 = new Intent(this, ContactsActivity.class); // new intent of analytics activity
+        startActivity(myIntent7); // start activity , switch to graph1
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // insert animations
     }
 
@@ -142,8 +131,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -191,8 +178,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -234,8 +219,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long arg0) {
-                // TODO Auto-generated method stub
-
             }
 
             @Override
@@ -249,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text2 = intent.getStringExtra("theMessage");
-            //Log.i("text2: ", text2);
             String[] values2 = text2.split(",");
             Log.i("values2", values2[6]);
             String text3 = values2[6];
@@ -258,7 +240,6 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NumberFormatException e)
             {
-                //foo = 0;
             }
 
             incomingMessages.setText(text3);
@@ -271,7 +252,6 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NumberFormatException e)
             {
-                //foo = 0;
             }
 
             if (inclineValue == 0) {
@@ -287,7 +267,6 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NumberFormatException e)
             {
-                //h
             }
 
             if (speedValueFloat == 0) {

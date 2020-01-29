@@ -207,35 +207,5 @@
         app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
         app:srcCompat="@drawable/battery" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Sensor Information:"
-        android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/angleText"
-        app:layout_constraintTop_toBottomOf="@+id/angleText" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="A. EMG Sensor"
-        android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="B. IMU Sensor"
-        android:textColor="@color/White"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
 
 </android.support.constraint.ConstraintLayout>

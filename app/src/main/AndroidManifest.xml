@@ -30,9 +30,7 @@
         <activity android:name=".GraphActivity" />
         <activity android:name=".ControlActivity" />
         <activity android:name=".ContactsActivity" />
-        <activity android:name=".MainGraphActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ChartActivity"></activity>
     </application>
 
 </manifest>
